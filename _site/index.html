@@ -119,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     display: none;
   }
 </style>
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -597,8 +598,8 @@ function googleTranslateElementInit() {
 
 <section class="page-banner">
     <div class="page-banner-img">
-<div style="background-image: url(/assets/images/banners/home.jpeg)"></div>
-        <img class="img-placeholder" src="/assets/images/banners/home.jpeg">
+<div style="background-image: url(/assets/images/banners/home.jpg)"></div>
+        <img class="img-placeholder" src="/assets/images/banners/home.jpg">
 </div>
     <div class="wrapper">
       <div class="page-banner-inner"><div class="page-banner-default">
@@ -792,7 +793,8 @@ function googleTranslateElementInit() {
 
   <div class="pagination">
   <!-- Post list links -->
-  <ul class="post-list"><li>
+  <ul class="post-list">
+<li>
       
 
 
@@ -856,15 +858,736 @@ function googleTranslateElementInit() {
 
 
 <h2 class="post-title">
-        <a class="post-link" href="/react/2018/12/05/an-exhibit-of-markdown.html">
+        <a class="post-link" href="/tip/2022/07/13/NVMnodeVersion.html">
+          NVM으로 프로젝트 별 Node버전 관리하기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 13, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/tip/2022/07/13/NVMnodeVersion.html">
+        <p>
+        여러 프로젝트를 동시에 진행하다보니, 프로젝트 별 Node버전을 관리해야 될 필요성이 생겼다.
+요번 포스팅에선 맥유저를 위해 NVM으로 Node버전을 관리하는 방법에 대해 알아보겠습니다.
+
+NVM 설치
+
+brew install nvm
+
+
+명령어
+
+// 설치 가능한 Node버전 체크
+nvm ls-remote
+
+// 최신 버전 Node 설치
+nvm install node
+
+// LTS release 버전 설치
+nvm install --lts
+
+// 특정 버전 Node 설치
+nvm install 12.13.0
+
+// 설치된 Node 버전 체크
+nvm ls
+
+// 버전 삭제
+nvm uninstall 12.13.0
+
+
+위의... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#node">#node</a><a class="post-tag" href="/tags.html#tip">#tip</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/07/11/reactHookFrom.html">
+          Form 기능 구현에 용이한 React-hook-form 라이브러리 소개
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 11, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 5 mins</span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/07/11/reactHookFrom.html">
+        <p>
+        리액트에서의 Form UI
+
+사용자 입력 기능을 만들 때,
+value, onChange disable 등의 고려할 부분들과 고작 인풋창 하나에 useState가 기본 2개나 생성된다는 점이 비효율 적이게 느껴졌다.
+
+custom hook으로 만들어두고 사용하는 것도 하나의 방법이겠으나,
+유용한 라이브러리를 발견해 공유하고자 한다 🥳
+
+패키지 설치
+
+$ npm i react-hook-form
+$ yarn add react-hook-form
+
+
+
+
+특징
+
+일반적인 form을 다룰 때 많은 input들을 다 useState로 관리하고 change함수만들고 하는 일은
+중복되는 코드들도 많고 번거로운 작업이 많이 들어간다.... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#react">#react</a><a class="post-tag" href="/tags.html#library">#library</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/tip/2022/07/02/interface.html">
+          Typescript interface 쉽게 만들기
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jul 02, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/tip/2022/07/02/interface.html">
+        <p>
+        받아온 api object의 keys, values를 뽑아서 쉽게 복붙해서 만들자!
+
+콘솔로 출력한 뒤,
+Store object as global variable 항목을 클릭하면 temp1 이란 object가 생성됨
+
+
+
+Object.keys(temp1).join();
+
+&gt; "id,name,...";
+
+
+모든 속성명 가져오기
+
+Object.values(temp1)
+  .map((v) =&gt; typeof v)
+  .join();
+
+&gt; "string,string,...";
+
+
+모든 타입 가져오기
+
+단, object in array 같은 경우 그냥 object로 찍히기 때문에.. 확인하고 사용해야 한다!
+ <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#typescript">#typescript</a><a class="post-tag" href="/tags.html#interface">#interface</a><a class="post-tag" href="/tags.html#tip">#tip</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/javascript/2022/06/10/jsEvent.html">
+          Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 10, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+      </div>
+      <a class="post-excerpt" href="/javascript/2022/06/10/jsEvent.html">
+        <p>
+        비동기 처리의 특성
+
+특정 로직의 실행이 끝날 때까지 기다려주지 않고 나머지 코드를 먼저
+실행하는 것이 비동기 처리의 특징
+
+
+
+비동기 처리의 문제점
+
+좋은 사용자 경험과 성능을 위해 비동기처리 방식을 채택하고 있지만
+개발자는 순서가 뒤죽박죽인 코드의 실행이 직관적이지 않아 불편하고
+api응답을 통해 다음 코드를 실행시키는 등의 동기적 실행 처리가 필요하다
+
+예외(에러) 처리 방식
+
+Promise의 경우 .catch()를 통해서,
+async&amp;await 를 사용할 경우엔 try &amp; catch를 통해 오류를 잡하준다
+예외처리를 안할 경우
+에러나 났음에도 이후 로직을 계속 실행하기 때문에 오류가 발생함
+
+... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#frontend">#frontend</a><a class="post-tag" href="/tags.html#javascript">#javascript</a><a class="post-tag" href="/tags.html#event">#event</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/typescript/2022/06/04/typescript.html">
+          Typescript 문법 정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 04, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
+      </div>
+      <a class="post-excerpt" href="/typescript/2022/06/04/typescript.html">
+        <p>
+        Typescript
+
+
+  Javascript 기반의 프로그래밍 언어
+
+  Typescript 플레이그라운드 (타입스크립트 테스트)
+🤹‍♀️ https://www.typescriptlang.org/play
+
+
+
+
+기능
+
+1. Optional Props
+
+같은 속성이 다른 두 곳에서, 하나는 필수 하나는 옵셔널하게 적용될 경우 Default값을 지정할 수 있다.
+
+interface AppProps {
+	bg: string;
+	borderColor?: string; //optional한 값으로 string or undefined
+}
+function App({ bg, borderColor }: AppProps) {
+	r... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#frontend">#frontend</a><a class="post-tag" href="/tags.html#typescript">#typescript</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/typescript/2022/06/03/tsconfig.html">
+          tsconfig 옵션 정리
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 03, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/typescript/2022/06/03/tsconfig.html">
+        <p>
+        tsconfig.json options
+
+{
+  "compilerOptions": {
+    // [기본 옵션]
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"],
+      "@store/*": ["store/*"]
+    },
+    // ECMAScript 버전 설정
+    "target": "es6",
+    // 모듈을 위한 코드 생성 설정
+    "module": "commonjs",
+    // 컴파일에 포함될 라이브러리 파일 목록
+    "lib": ["dom... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#frontend">#frontend</a><a class="post-tag" href="/tags.html#typescript">#typescript</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/06/02/recoilVSredux.html">
+          Recoil vs Redux 비교와 상태관리 라이브러리 선택
+        </a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 02, 2022</span>
+        <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+      </div>
+      <a class="post-excerpt" href="/react/2022/06/02/recoilVSredux.html">
+        <p>
+        Overview
+
+다른 프로젝트에 투입되면서 아키텍쳐 설계부터 대대적인 수정이 필요해졌다.
+또 시작되는 리팩토링 🥳
+기존의 상태관리 방식에서 맘에 안들었던 점도 고칠겸! 이번 프로젝트의 레거시 코드도 대거 걷어낼겸
+기존 프로젝트에서 사용중이었던 Redux와 상태관리 체계가 변경되면서 사용하기 적합하다고 판단되는
+Recoil를 비교해보고
+팀원들과 공유 후 선택되는 방향으로 상태체제를 구성해보려고 한다.🙌
+
+Recoil vs Redux
+
+1. 비교
+
+
+  
+    
+       
+      Recoil
+      Redux
+    
+  
+  
+    
+      컨셉
+      Atomic 모델 기반 : 작은 상태 단... <span class="read_more">Read More</span>
+        </p>
+      </a>
+      <div class="post-tags">
+<a class="post-tag" href="/tags.html#frontend">#frontend</a><a class="post-tag" href="/tags.html#react">#react</a><a class="post-tag" href="/tags.html#recoil">#recoil</a><a class="post-tag" href="/tags.html#redux">#redux</a>
+</div>
+    </li>
+<li>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="post-title">
+        <a class="post-link" href="/react/2022/06/01/reactState.html">
           리액트 상태관리 변경에 대한 제안
         </a>
       </h2>
       <div class="post-meta">
-        <span class="post-date"><i class="fa fa-calendar"></i> Dec 05, 2018</span>
+        <span class="post-date"><i class="fa fa-calendar"></i> Jun 01, 2022</span>
         <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 2 mins</span>
       </div>
-      <a class="post-excerpt" href="/react/2018/12/05/an-exhibit-of-markdown.html">
+      <a class="post-excerpt" href="/react/2022/06/01/reactState.html">
         <p>
         Overview
 
@@ -883,7 +1606,8 @@ Server State: 서버로부터 받아오는 St... <span class="read_more">Read Mo
       <div class="post-tags">
 <a class="post-tag" href="/tags.html#frontend">#frontend</a><a class="post-tag" href="/tags.html#react">#react</a><a class="post-tag" href="/tags.html#react-query">#react-query</a><a class="post-tag" href="/tags.html#recoil">#recoil</a><a class="post-tag" href="/tags.html#%EC%83%81%ED%83%9C%EA%B4%80%EB%A6%AC">#상태관리</a>
 </div>
-    </li></ul>
+    </li>
+</ul>
 
   <!-- Pagination links -->
 </div>
@@ -917,14 +1641,32 @@ Server State: 서버로부터 받아오는 St... <span class="read_more">Read Mo
   <ul>
     <li>
       <a href="/index.html">
-        All<span>1</span>
+        All<span>8</span>
       </a>
     </li>
 
     
       <li>
+        <a href="/categories.html#h-Javascript">
+          Javascript <span>1</span>
+        </a>
+      </li>
+    
+      <li>
         <a href="/categories.html#h-React">
-          React <span>1</span>
+          React <span>3</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-Tip">
+          Tip <span>2</span>
+        </a>
+      </li>
+    
+      <li>
+        <a href="/categories.html#h-Typescript">
+          Typescript <span>2</span>
         </a>
       </li>
     

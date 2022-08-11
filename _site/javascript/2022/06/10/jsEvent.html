@@ -7,21 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Archives | 기술블로그</title>
+<title>Javascript 이벤트 관리 방법(버블링,캡처링,위임 등) | 기술블로그</title>
 <meta name="generator" content="Jekyll v4.2.2">
-<meta property="og:title" content="Archives">
+<meta property="og:title" content="Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)">
 <meta name="author" content="eunchu">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-<link rel="canonical" href="http://localhost:4000/archives.html">
-<meta property="og:url" content="http://localhost:4000/archives.html">
+<meta name="description" content="비동기 처리의 특성">
+<meta property="og:description" content="비동기 처리의 특성">
+<link rel="canonical" href="http://localhost:4000/javascript/2022/06/10/jsEvent.html">
+<meta property="og:url" content="http://localhost:4000/javascript/2022/06/10/jsEvent.html">
 <meta property="og:site_name" content="기술블로그">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-06-10T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="Archives">
+<meta property="twitter:title" content="Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"eunchu"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Archives","url":"http://localhost:4000/archives.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"eunchu"},"dateModified":"2022-06-10T00:00:00+09:00","datePublished":"2022-06-10T00:00:00+09:00","description":"비동기 처리의 특성","headline":"Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/javascript/2022/06/10/jsEvent.html"},"url":"http://localhost:4000/javascript/2022/06/10/jsEvent.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -769,15 +770,8 @@ function googleTranslateElementInit() {
         <div class="framework">
   <section class="main">
 
-     
-
-
-
-
-
-
-  
-  
+     <div class="post">
+  <section>
 
 
 
@@ -787,160 +781,258 @@ function googleTranslateElementInit() {
 
 
 
+<header class="post-header">
+  <h1 class="post-title p-name" itemprop="name headline">Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)</h1>
+  <h2 class="post-subtitle"></h2>
 
+  <p class="post-meta">
+    <time class="dt-published" datetime="2022-06-10T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Jun 10, 2022
+    </time>
 
-
-
-
-  
-
-  
-  
-  <div class="page-segments">
-  <ul class="page-segments-list">
     
-    <h2 id="2022" class="segment-name">2022</h2>
-      
-      
-        
-        <li> 
-<span class="post-meta">Jul 13, 2022</span>
-<span>
-  <a class="post-link" href="/tip/2022/07/13/NVMnodeVersion.html">
-    NVM으로 프로젝트 별 Node버전 관리하기
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jul 11, 2022</span>
-<span>
-  <a class="post-link" href="/react/2022/07/11/reactHookFrom.html">
-    Form 기능 구현에 용이한 React-hook-form 라이브러리 소개
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jul 02, 2022</span>
-<span>
-  <a class="post-link" href="/tip/2022/07/02/interface.html">
-    Typescript interface 쉽게 만들기
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jun 10, 2022</span>
-<span>
-  <a class="post-link" href="/javascript/2022/06/10/jsEvent.html">
-    Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jun 04, 2022</span>
-<span>
-  <a class="post-link" href="/typescript/2022/06/04/typescript.html">
-    Typescript 문법 정리
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jun 03, 2022</span>
-<span>
-  <a class="post-link" href="/typescript/2022/06/03/tsconfig.html">
-    tsconfig 옵션 정리
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jun 02, 2022</span>
-<span>
-  <a class="post-link" href="/react/2022/06/02/recoilVSredux.html">
-    Recoil vs Redux 비교와 상태관리 라이브러리 선택
-  </a>
-</span>
- </li>
-        
-      
-        
-        <li> 
-<span class="post-meta">Jun 01, 2022</span>
-<span>
-  <a class="post-link" href="/react/2022/06/01/reactState.html">
-    리액트 상태관리 변경에 대한 제안
-  </a>
-</span>
- </li>
-        
-      
     
-  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
+  </p>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#frontend">#frontend</a><a class="post-tag" href="/tags.html#javascript">#javascript</a><a class="post-tag" href="/tags.html#event">#event</a>
+</div></header>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <div class="post-content e-content" itemprop="articleBody">
+
+      <h3 id="비동기-처리의-특성">비동기 처리의 특성</h3>
+
+<p>특정 로직의 실행이 끝날 때까지 기다려주지 않고 나머지 코드를 먼저
+실행하는 것이 비동기 처리의 특징</p>
+
+<!--truncate-->
+
+<h3 id="비동기-처리의-문제점">비동기 처리의 문제점</h3>
+
+<p>좋은 사용자 경험과 성능을 위해 비동기처리 방식을 채택하고 있지만
+개발자는 순서가 뒤죽박죽인 코드의 실행이 직관적이지 않아 불편하고
+api응답을 통해 다음 코드를 실행시키는 등의 동기적 실행 처리가 필요하다</p>
+
+<h3 id="예외에러-처리-방식">예외(에러) 처리 방식</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>의 경우 <code class="language-plaintext highlighter-rouge">.catch()</code>를 통해서,<br>
+<code class="language-plaintext highlighter-rouge">async&amp;await</code> 를 사용할 경우엔 <code class="language-plaintext highlighter-rouge">try &amp; catch</code>를 통해 오류를 잡하준다<br>
+예외처리를 안할 경우<br>
+에러나 났음에도 이후 로직을 계속 실행하기 때문에 오류가 발생함</p>
+
+<h2 id="개념-정리">개념 정리</h2>
+
+<h3 id="이벤트-버블링bubbling">이벤트 버블링(Bubbling)</h3>
+
+<p>이벤트 발생 시, 요소에 할당된 핸들러 동작 후에 최상단의 조상요소를 만날 때까지 부모요소 핸들러를 동작하는 것</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('form')</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('div')</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('p')</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">event</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>p를 클릭하면, p,div,form 순으로 alert이 발생된다</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">e.stopPropagation()</code> -&gt; 위쪽으로 일어나는 버블링을 막아줌. (다른 핸들러 동작은 못막)
+<code class="language-plaintext highlighter-rouge">e.stopImmediatepropagation()</code> -&gt; 다른 핸들러 동작도 막아줌</p>
+</blockquote>
+
+<h3 id="이벤트-캡쳐링capturing">이벤트 캡쳐링(Capturing)</h3>
+
+<p>버블링의 반대. 이벤트가 하위 요소로 전파되는 것</p>
+
+<h3 id="이벤트-위임">이벤트 위임</h3>
+
+<p>하나의 부모에 이벤트를 등록하여, 부모가 이벤트를 위임하는 방식
+하위 요소 각각에서 이벤트를 붙이지 않고 상위 요소에서 하위 요소들의 이벤트들을 제어함</p>
+
+<p><strong>장점</strong></p>
+
+<ul>
+  <li>동적인 요소들의 처리가 수월함</li>
+  <li>이벤트 핸들러가 더 적게 등록되기 때문에 메모리 절약</li>
+  <li>하위 요소가 많아질수록 이벤트리스너를 다루는 작업이 번거롭기 때문에 위임방식을 사용함</li>
+</ul>
+
+
+    </div>
+
+</article>
+<div class="post-nav">
+<a class="previous" href="/typescript/2022/06/04/typescript.html" title="Typescript 문법 정리">Typescript 문법 정리</a><a class="next" href="/tip/2022/07/02/interface.html" title="Typescript interface 쉽게 만들기">Typescript interface 쉽게 만들기</a>
+</div>
+<div class="post-related">
+      <div>Related Articles</div>
+      <ul>
+        <li><a class="post-link" href="/tip/2022/07/02/interface.html" title="Typescript interface 쉽게 만들기">Typescript interface 쉽게 만들기</a></li>
+<li><a class="post-link" href="/javascript/2022/06/10/jsEvent.html" title="Typescript interface 쉽게 만들기">Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)</a></li>
+<li><a class="post-link" href="/react/2022/06/01/reactState.html" title="Typescript interface 쉽게 만들기">리액트 상태관리 변경에 대한 제안</a></li>
+<li><a class="post-link" href="/react/2022/07/11/reactHookFrom.html" title="Typescript interface 쉽게 만들기">Form 기능 구현에 용이한 React-hook-form 라이브러리 소개</a></li>
+</ul>
+    </div>
+<div class="post-comments"></div></section>
 </div>
 
 
   </section>
   <section class="sidebar" style="margin-left: 15px;">
-    <!-- Get sidebar items -->
+    <!-- Get sidebar items --><style type="text/css" media="screen">
+.post-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+</style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="common-list">
-  <ul>
-    <li>
-      <a href="/index.html">
-        All<span>8</span>
-      </a>
-    </li>
-
-    
-      <li>
-        <a href="/archives.html#h-2022">
-          2022 <span>8</span>
-        </a>
-      </li>
-    
-  </ul>
+<div class="post-menu">
+  <div class="post-menu-title">TOC</div>
+  <div class="post-menu-content"></div>
 </div>
 
+<script>
+  function generateContent() {
+    var menu = document.querySelector(".post-menu");
+    var menuContent =  menu.querySelector(".post-menu-content");
+    var headings = document.querySelector(".post-content").querySelectorAll("h2, h3, h4, h5, h6");
+
+    // Hide menu when no headings
+    if (headings.length === 0) {
+      return menu.style.display = "none";
+    }
+
+    // Generate post menu
+    var menuHTML = '';
+    for (var i = 0; i < headings.length; i++) {
+      var h = headings[i];
+      menuHTML += (
+        '<li class="h-' + h.tagName.toLowerCase() + '">'
+        + '<a href="#h-' + h.getAttribute('id') + '">' + h.textContent + '</a></li>');
+    }
+
+    menuContent.innerHTML = '<ul>' + menuHTML + '</ul>';
+
+    // The header element
+    var header = document.querySelector('header.site-header');
+
+    function doMenuCollapse(index, over_items) {
+      var items = menuContent.firstChild.children;
+
+      if (over_items == undefined) {
+        over_items = 20;
+      }
+
+      if (items.length < over_items) {
+        return;
+      }
+
+      var activeItem = items[index];
+      var beginItem = activeItem
+      var endItem = activeItem
+      var beginIndex = index;
+      var endIndex = index + 1;
+      while (beginIndex >= 0
+        && !items[beginIndex].classList.contains('h-h2')) {
+        beginIndex -= 1;
+      }
+      while (endIndex < items.length
+        && !items[endIndex].classList.contains('h-h2')) {
+        endIndex += 1;
+      }
+      for (var i = 0; i < beginIndex; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+      for (var i = beginIndex + 1; i < endIndex; i++) {
+        item = items[i]
+        // if (!item.classList.contains('h-h2')) {
+          item.style.display = '';
+        // }
+      }
+      for (var i = endIndex; i < items.length; i++) {
+        item = items[i]
+        if (!item.classList.contains('h-h2')) {
+          item.style.display = 'none';
+        }
+      }
+    }
+
+    // Init menu collapsed
+    doMenuCollapse(-1);
+
+    // Active the menu item
+    window.addEventListener('scroll', function (event) {
+      var lastActive = menuContent.querySelector('.active');
+      var changed = true;
+      var activeIndex = -1;
+      for (var i = headings.length - 1; i >= 0; i--) {
+        var h = headings[i];
+        var headingRect = h.getBoundingClientRect();
+        var headerRect = header.getBoundingClientRect();
+        var headerTop = Math.floor(headerRect.top);
+        var headerHeight = Math.floor(headerRect.height);
+        var headerHeight = headerTop + headerHeight + 20;
+        if (headingRect.top <= headerHeight) {
+          var id = 'h-' + h.getAttribute('id');
+          var a = menuContent.querySelector('a[href="#' + id  + '"]');
+          var curActive = a.parentNode;
+          if (curActive) {
+            curActive.classList.add('active');
+            activeIndex = i;
+          }
+          if (lastActive == curActive) {
+            changed = false;
+          }
+          break;
+        }
+      }
+      if (changed) {
+        if (lastActive) {
+          lastActive.classList.remove('active');
+        }
+        doMenuCollapse(activeIndex);
+      }
+      event.preventDefault();
+    });
+  }
+  generateContent();
+</script>
 </section>
 </div>
 

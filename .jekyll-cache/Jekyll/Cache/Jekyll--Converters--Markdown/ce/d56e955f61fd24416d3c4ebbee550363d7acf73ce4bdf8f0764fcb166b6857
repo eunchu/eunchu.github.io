@@ -1,0 +1,59 @@
+I"F<h2 id="비동기">비동기</h2>
+
+<h3 id="특징">특징</h3>
+
+<p>특정 로직의 실행이 끝날 때까지 기다려주지 않고 나머지 코드를 먼저
+실행하는 것이 비동기 처리의 특징</p>
+
+<!--truncate-->
+
+<h3 id="문제점">문제점</h3>
+
+<p>좋은 사용자 경험과 성능을 위해 비동기처리 방식을 채택하고 있지만
+개발자는 순서가 뒤죽박죽인 코드의 실행이 직관적이지 않아 불편하고
+api응답을 통해 다음 코드를 실행시키는 등의 동기적 실행 처리가 필요하다</p>
+
+<h3 id="예외에러-처리-방식">예외(에러) 처리 방식</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>의 경우 <code class="language-plaintext highlighter-rouge">.catch()</code>를 통해서,<br />
+<code class="language-plaintext highlighter-rouge">async&amp;await</code> 를 사용할 경우엔 <code class="language-plaintext highlighter-rouge">try &amp; catch</code>를 통해 오류를 잡하준다<br />
+예외처리를 안할 경우<br />
+에러나 났음에도 이후 로직을 계속 실행하기 때문에 오류가 발생함</p>
+
+<h3 id="개념-정리">개념 정리</h3>
+
+<h2 id="이벤트-버블링bubbling">이벤트 버블링(Bubbling)</h2>
+
+<p>이벤트 발생 시, 요소에 할당된 핸들러 동작 후에 최상단의 조상요소를 만날 때까지 부모요소 핸들러를 동작하는 것</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('form')</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('div')</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('p')</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">event</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>p를 클릭하면, p,div,form 순으로 alert이 발생된다</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">e.stopPropagation()</code> -&gt; 위쪽으로 일어나는 버블링을 막아줌. (다른 핸들러 동작은 못막)
+<code class="language-plaintext highlighter-rouge">e.stopImmediatepropagation()</code> -&gt; 다른 핸들러 동작도 막아줌</p>
+</blockquote>
+
+<h2 id="이벤트-캡쳐링capturing">이벤트 캡쳐링(Capturing)</h2>
+
+<p>버블링의 반대. 이벤트가 하위 요소로 전파되는 것</p>
+
+<h2 id="이벤트-위임">이벤트 위임</h2>
+
+<p>하나의 부모에 이벤트를 등록하여, 부모가 이벤트를 위임하는 방식
+하위 요소 각각에서 이벤트를 붙이지 않고 상위 요소에서 하위 요소들의 이벤트들을 제어함</p>
+
+<p><strong>장점</strong></p>
+
+<ul>
+  <li>동적인 요소들의 처리가 수월함</li>
+  <li>이벤트 핸들러가 더 적게 등록되기 때문에 메모리 절약</li>
+  <li>하위 요소가 많아질수록 이벤트리스너를 다루는 작업이 번거롭기 때문에 위임방식을 사용함</li>
+</ul>
+:ET

@@ -1,0 +1,25 @@
+I"l<p>받아온 api object의 keys, values를 뽑아서 쉽게 복붙해서 만들자!</p>
+
+<p>콘솔로 출력한 뒤,<br />
+<code class="language-plaintext highlighter-rouge">Store object as global variable</code> 항목을 클릭하면 <code class="language-plaintext highlighter-rouge">temp1</code> 이란 <code class="language-plaintext highlighter-rouge">object</code>가 생성됨</p>
+
+<p><img src="../assets/images/post/interface-01.png" alt="예시" /></p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">temp1</span><span class="p">).</span><span class="nx">join</span><span class="p">();</span>
+
+<span class="o">&gt;</span> <span class="dl">"</span><span class="s2">id,name,...</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>모든 속성명 가져오기</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">temp1</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">join</span><span class="p">();</span>
+
+<span class="o">&gt;</span> <span class="dl">"</span><span class="s2">string,string,...</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>모든 타입 가져오기</p>
+
+<p><em>단, object in array 같은 경우 그냥 object로 찍히기 때문에.. 확인하고 사용해야 한다!</em></p>
+:ET

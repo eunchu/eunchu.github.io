@@ -1,0 +1,56 @@
+I"-'<h2 id="tsconfigjson-옵션-정리">tsconfig.json 옵션 정리</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="p">[</span><span class="err">기본</span><span class="w"> </span><span class="err">옵션</span><span class="p">]</span><span class="w">
+    </span><span class="nl">"baseUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@components/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"components/*"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"@styles/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"styles/*"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"@store/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"store/*"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">ECMAScript</span><span class="w"> </span><span class="err">버전</span><span class="w"> </span><span class="err">설정</span><span class="w">
+    </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">모듈을</span><span class="w"> </span><span class="err">위한</span><span class="w"> </span><span class="err">코드</span><span class="w"> </span><span class="err">생성</span><span class="w"> </span><span class="err">설정</span><span class="w">
+    </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commonjs"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">컴파일에</span><span class="w"> </span><span class="err">포함될</span><span class="w"> </span><span class="err">라이브러리</span><span class="w"> </span><span class="err">파일</span><span class="w"> </span><span class="err">목록</span><span class="w">
+    </span><span class="nl">"lib"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"dom"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dom.iterable"</span><span class="p">,</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">],</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">js파일</span><span class="w"> </span><span class="err">컴파일</span><span class="w"> </span><span class="err">허용</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">.js파일의</span><span class="w"> </span><span class="err">오류</span><span class="w"> </span><span class="err">검사</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"checkJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">.map</span><span class="w"> </span><span class="err">파일</span><span class="w"> </span><span class="err">생성</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">주석</span><span class="w"> </span><span class="err">삭제</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"removeComments"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">결과</span><span class="w"> </span><span class="err">파일</span><span class="w"> </span><span class="err">내보낼지</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"noEmit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">각</span><span class="w"> </span><span class="err">파일을</span><span class="w"> </span><span class="err">분리된</span><span class="w"> </span><span class="err">모듈로</span><span class="w"> </span><span class="err">트랜스파일</span><span class="w">
+    </span><span class="nl">"isolatedModules"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+
+
+    </span><span class="err">//</span><span class="w"> </span><span class="p">[</span><span class="err">타입</span><span class="w"> </span><span class="err">체킹</span><span class="p">]</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">엄격한</span><span class="w"> </span><span class="err">타입</span><span class="w"> </span><span class="err">체킹</span><span class="w"> </span><span class="err">옵션</span><span class="w">
+    </span><span class="nl">"strict"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+
+    </span><span class="nl">"esModuleInterop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">모듈</span><span class="w"> </span><span class="err">해석</span><span class="w"> </span><span class="err">방법</span><span class="w"> </span><span class="err">설정</span><span class="w">
+    </span><span class="nl">"moduleResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resolveJsonModule"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preserve"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">증분</span><span class="w"> </span><span class="err">컴파일</span><span class="w"> </span><span class="err">설정</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"incremental"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">정의</span><span class="w"> </span><span class="err">파일의</span><span class="w"> </span><span class="err">타입</span><span class="w"> </span><span class="err">확인</span><span class="w"> </span><span class="err">건너</span><span class="w"> </span><span class="err">뛸</span><span class="w"> </span><span class="err">지</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"skipLibCheck"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">같은</span><span class="w"> </span><span class="err">파일에</span><span class="w"> </span><span class="err">대한</span><span class="w"> </span><span class="err">일관되지</span><span class="w"> </span><span class="err">않은</span><span class="w"> </span><span class="err">참조</span><span class="w"> </span><span class="err">허용</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"forceConsistentCasingInFileNames"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"next-env.d.ts"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.ts"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.tsx"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><a href="https://aka.ms/tsconfig.json">더 많은 옵션!</a></p>
+:ET

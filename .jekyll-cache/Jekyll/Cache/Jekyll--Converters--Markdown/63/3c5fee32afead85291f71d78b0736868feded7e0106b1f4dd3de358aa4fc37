@@ -1,0 +1,165 @@
+I"� <h2 id="overview">Overview</h2>
+
+<p>다른 프로젝트에 투입되면서 아키텍쳐 설계부터 대대적인 수정이 필요해졌다.<br />
+또 시작되는 <strong>리팩토링</strong> 🥳<br />
+기존의 상태관리 방식에서 맘에 안들었던 점도 고칠겸! 이번 프로젝트의 레거시 코드도 대거 걷어낼겸<br />
+기존 프로젝트에서 사용중이었던 <strong><a href="https://ko.redux.js.org/">Redux</a></strong>와 상태관리 체계가 변경되면서 사용하기 적합하다고 판단되는<br />
+<strong><a href="https://recoiljs.org/ko/">Recoil</a></strong>를 비교해보고
+팀원들과 공유 후 선택되는 방향으로 상태체제를 구성해보려고 한다.🙌</p>
+
+<h2 id="recoil-vs-redux">Recoil vs Redux</h2>
+
+<h3 id="1-비교">1. 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Recoil</th>
+      <th>Redux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>컨셉</td>
+      <td>Atomic 모델 기반<br /> : 작은 상태 단위(atom)로 관리,<br /> atom을 결합하여 데이터를 가공하는 방식</td>
+      <td>Flux 아키텍쳐 기반<br /> : 단방향 데이터 흐름<br /> action -&gt; dispatcher -&gt; store -&gt; view</td>
+    </tr>
+    <tr>
+      <td>미들웨어</td>
+      <td>X</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>코드량</td>
+      <td>↑</td>
+      <td>↓</td>
+    </tr>
+    <tr>
+      <td>복잡도</td>
+      <td>중하</td>
+      <td>중상</td>
+    </tr>
+    <tr>
+      <td>DevTools</td>
+      <td>미흡</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <td>관리방식</td>
+      <td>분산관리</td>
+      <td>중앙집중형</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-recoil-특징">2. Recoil 특징</h3>
+
+<ul>
+  <li>동시성 모드 제공
+    <ul>
+      <li>Concurrent mode: 흐름이 여러 개가 존재하는 경우, 렌더링 독작 우선순위를 정하여 렌더링할 수 있음</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">atom -&gt; selector -&gt; components</code> 플로우의 복잡하지 않은 구조</li>
+  <li>리액트를 위한 맞춤 상태관리 라이브러리</li>
+  <li>낮은 러닝커브</li>
+  <li><code class="language-plaintext highlighter-rouge">store</code>와 같은 외부 요인이 아닌 <code class="language-plaintext highlighter-rouge">react</code>내부의 상태를 활용하고 <code class="language-plaintext highlighter-rouge">contextAPI</code>를 통해 구현되어 있기 때문에 리액트 스러운 상태관리가 가능함</li>
+  <li>리액트 내장 <code class="language-plaintext highlighter-rouge">hooks</code>를 사용하는 방식과 거의 똑같기 때문에 쉽게 배우고 활용할 수 있음</li>
+</ul>
+
+<h3 id="3-redux-특징">3. Redux 특징</h3>
+
+<ul>
+  <li>Single source of truth
+    <ul>
+      <li>같은 데이터는 항상 같은 장소에서 관리</li>
+    </ul>
+  </li>
+  <li>상태 변경은 순수함수로만 가능함</li>
+  <li>브라우저 Devtools를 활용하여 현재 상태를 관리하기 편함</li>
+  <li>중앙집중형 store관리로 로직 복잡도가 높은 편임</li>
+</ul>
+
+<hr />
+
+<h2 id="recoil">Recoil</h2>
+
+<h3 id="특장점">특장점</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">atom → selector → component</code> 의 하나의 <code class="language-plaintext highlighter-rouge">data-flow</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Concurrent Mode</code> 지원</li>
+  <li><strong>캐싱지원</strong>
+    <ul>
+      <li>selector를 통한 비동기 작업을 진행할 때, atom값에 자동으로 의존성이 걸리는데
+atom값이 변경될 때마다 selector가 변경된다. 이때 atom의 값이 동일할 경우 내부적으로
+반환값을 메모라이즈 하고 있어 캐싱된 값을 반환함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">useRecoilValue</code>를 사용하면 state, set을 반환해줌 try,catch구문을 사용하지 않아도 됨</li>
+</ul>
+
+<h3 id="atom">Atom</h3>
+
+<ul>
+  <li>상태의 단위</li>
+  <li>atom이 업데이트되면 해당 atom을 구독하고 있던 모든 컴포넌트의 상태가 갱신되어 리랜더됨</li>
+  <li>unique한 key값으로 구분함</li>
+</ul>
+
+<h3 id="userecoilstate">useRecoilState</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useRecoilState</span><span class="p">(</span><span class="nx">valueState</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useRecoilState</code> hook을 사용해서 <code class="language-plaintext highlighter-rouge">state</code>를 <code class="language-plaintext highlighter-rouge">get</code>, <code class="language-plaintext highlighter-rouge">set</code>할 수 있음<br />
+<strong>react의 useState와 동일한 사용방식</strong></p>
+
+<h3 id="userecoilvalue-usesetrecoilvalue">useRecoilValue, useSetRecoilValue</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">useRecoilValue</span><span class="p">(</span><span class="nx">valueState</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">setValue</span> <span class="o">=</span> <span class="nx">useSetRecoilValue</span><span class="p">(</span><span class="nx">valueState</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>value, 변경함수 각각 따로 호출하여 쓸 수 있음</p>
+
+<h3 id="selector">Selector</h3>
+
+<p>다른 selector, atom의 값을 get해올 수 있고 그 값을 바탕으로 state를 modify하는 역할</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">countState</span> <span class="o">=</span> <span class="nx">selector</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">countState</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// uniqueId</span>
+  <span class="na">get</span><span class="p">:</span> <span class="p">({</span> <span class="kd">get</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="kd">get</span><span class="p">(</span><span class="nx">textState</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="na">set</span><span class="p">:</span> <span class="p">({</span> <span class="kd">set</span> <span class="p">},</span> <span class="nx">newValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// newValue =&gt; 변경 된 상태 값</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li>파생된 <code class="language-plaintext highlighter-rouge">state</code>를 만들 수 있음</li>
+  <li><code class="language-plaintext highlighter-rouge">get</code>프로퍼티를 통해 <code class="language-plaintext highlighter-rouge">state</code>를 가공하여 반환할 수 있음</li>
+  <li>순수함수여야 함</li>
+  <li>기본적으로 값을 캐싱함 (한번 call한 api에 대해서 새로운 call이 필요 없음)</li>
+</ul>
+
+<hr />
+
+<h2 id="결론">결론</h2>
+
+<ol>
+  <li>상태관리 변경의 필요성</li>
+  <li>
+    <p>다른 라이브러리의 도입</p>
+
+    <p>두 가지 모두 필요한 부분이고 현 프로젝트의 문제점을 해결할 수 있으며<br />
+간단한 개념으로도 쉽게 접근할 수 있는 recoil의 도입을 결정.<br />
+심지어 많은 보일러 플레이트 코드들을 줄일 수 있다.<br />
+대형 프로젝트에서의 관리에 대한 레퍼런스는 많지 않지만, 시간을 투자하여 적용할 가치가 있다고 판단됨</p>
+  </li>
+</ol>
+:ET

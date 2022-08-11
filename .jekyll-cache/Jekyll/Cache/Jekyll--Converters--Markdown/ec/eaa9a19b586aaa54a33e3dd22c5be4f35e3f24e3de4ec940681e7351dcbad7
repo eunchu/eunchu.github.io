@@ -1,0 +1,75 @@
+I"N<h2 id="typescript">Typescript</h2>
+
+<blockquote>
+  <p>Javascript 기반의 프로그래밍 언어<br /></p>
+
+  <p>Typescript 플레이그라운드 (타입스크립트 테스트)<br />
+🤹‍♀️ <a href="https://www.typescriptlang.org/play"></a></p>
+</blockquote>
+
+<!--truncate-->
+
+<h2 id="기능">기능</h2>
+
+<h3 id="1-optional-props">1. Optional Props</h3>
+
+<p>같은 속성이 다른 두 곳에서, 하나는 <strong>필수</strong> 하나는 <strong>옵셔널</strong>하게 적용될 경우 Default값을 지정할 수 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">AppProps</span> <span class="p">{</span>
+	<span class="nl">bg</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+	<span class="nl">borderColor</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">//optional한 값으로 string or undefined</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">bg</span><span class="p">,</span> <span class="nx">borderColor</span> <span class="p">}:</span> <span class="nx">AppProps</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="p">(</span>
+		<span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+			<span class="o">&lt;</span><span class="nx">Circle</span> <span class="nx">bgColor</span><span class="o">=</span><span class="dl">"</span><span class="s2">tomato</span><span class="dl">"</span> <span class="nx">borderColor</span><span class="o">=</span><span class="p">{</span><span class="nx">borderColor</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">}</span><span class="sr">/</span><span class="err">&gt;
+</span>																						<span class="c1">//undefined일 경우 white값을 사용함</span>
+			<span class="o">&lt;</span><span class="nx">Circle</span> <span class="nx">bgColor</span><span class="o">=</span><span class="dl">"</span><span class="s2">tomato</span><span class="dl">"</span><span class="o">/&gt;</span>
+		<span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
+</span>	<span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 위와 동일함!</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">bg</span><span class="p">,</span> <span class="nx">borderColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span> <span class="p">}:</span> <span class="nx">AppProps</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h3 id="2-enums">2. Enums</h3>
+
+<p>열거형 자료구조, <code class="language-plaintext highlighter-rouge">서로 연관된 상수들의 집할</code>을 정의할 수 있다.<br />
+열거형을 이용하면 내용을 문서화하거나 구분되는 사례 집합을 더 쉽게 관리할 수 있다.<br />
+<br /></p>
+
+<ul>
+  <li>타입스크립트는 숫자와 문자열 기반 열거형을 제공함</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">Categories</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">TO_DO</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">DOING</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">DONE</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">categoryState</span> <span class="o">=</span> <span class="nx">atom</span><span class="o">&lt;</span><span class="nx">IToDo</span><span class="p">[</span><span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">]</span><span class="o">&gt;</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">default</span><span class="p">:</span> <span class="nx">Categories</span><span class="p">.</span><span class="nx">TO_DO</span><span class="p">,</span> <span class="c1">// 👈</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>사용시 이점</strong></p>
+
+<ul>
+  <li>관리 포인트가 한 곳이라, 수정에 용이함!</li>
+  <li>같은 문자 반복해서 쓸 필요도 없어지고, 에러(오타/실수) 방지할 수 있음</li>
+</ul>
+
+<h3 id="3-string-to-number">3. string to number</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span>
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="o">+</span><span class="nx">a</span><span class="p">;</span>
+<span class="c1">// b -&gt; 123</span>
+
+<span class="mi">2</span><span class="p">.</span> <span class="nx">js</span>
+<span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+</code></pre></div></div>
+:ET

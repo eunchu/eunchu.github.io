@@ -1,4 +1,569 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-11T13:22:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>eunchu</name></author><entry><title type="html">리액트 상태관리 변경에 대한 제안</title><link href="http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown.html" rel="alternate" type="text/html" title="리액트 상태관리 변경에 대한 제안" /><published>2018-12-05T00:00:00+09:00</published><updated>2018-12-05T00:00:00+09:00</updated><id>http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown</id><content type="html" xml:base="http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown.html"><![CDATA[<h2 id="overview">Overview</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-11T13:52:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>eunchu</name></author><entry><title type="html">NVM으로 프로젝트 별 Node버전 관리하기</title><link href="http://localhost:4000/tip/2022/07/13/NVMnodeVersion.html" rel="alternate" type="text/html" title="NVM으로 프로젝트 별 Node버전 관리하기" /><published>2022-07-13T00:00:00+09:00</published><updated>2022-07-13T00:00:00+09:00</updated><id>http://localhost:4000/tip/2022/07/13/NVMnodeVersion</id><content type="html" xml:base="http://localhost:4000/tip/2022/07/13/NVMnodeVersion.html"><![CDATA[<p>여러 프로젝트를 동시에 진행하다보니, 프로젝트 별 Node버전을 관리해야 될 필요성이 생겼다.
+요번 포스팅에선 맥유저를 위해 NVM으로 Node버전을 관리하는 방법에 대해 알아보겠습니다.</p>
+
+<h3 id="nvm-설치">NVM 설치</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install nvm
+</code></pre></div></div>
+
+<h3 id="명령어">명령어</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 설치 가능한 Node버전 체크
+nvm ls-remote
+
+// 최신 버전 Node 설치
+nvm install node
+
+// LTS release 버전 설치
+nvm install --lts
+
+// 특정 버전 Node 설치
+nvm install 12.13.0
+
+// 설치된 Node 버전 체크
+nvm ls
+
+// 버전 삭제
+nvm uninstall 12.13.0
+</code></pre></div></div>
+
+<p>위의 명령어로 대부분의 처리가 가능합니다 😀</p>
+
+<h3 id="버전-변경">버전 변경</h3>
+
+<p>사용할 노드의 여러 버전들을 설치했다면 각 프로젝트에서<br />
+사용하고자 하는 버전을 선택해서 이용할 수 있습니다.</p>
+
+<p>먼저, .nvmrc파일을 생성하여 해당 프로젝트에서 사용될 버전을 적어줍니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>12.13.0
+</code></pre></div></div>
+
+<p>다음, 아래 명령어를 통해 .nvmrc에 기입된 버전으로 변경하여 사용합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvm use
+</code></pre></div></div>
+
+<p>.nvmrc파일은 .gitignore에 추가하여 개인적으로 사용해도 되고,
+팀원들과 공유하여 사용해도 됩니다.</p>]]></content><author><name>eunchu</name></author><category term="Tip" /><category term="node" /><category term="tip" /><summary type="html"><![CDATA[여러 프로젝트를 동시에 진행하다보니, 프로젝트 별 Node버전을 관리해야 될 필요성이 생겼다. 요번 포스팅에선 맥유저를 위해 NVM으로 Node버전을 관리하는 방법에 대해 알아보겠습니다.]]></summary></entry><entry><title type="html">Form 기능 구현에 용이한 React-hook-form 라이브러리 소개</title><link href="http://localhost:4000/react/2022/07/11/reactHookFrom.html" rel="alternate" type="text/html" title="Form 기능 구현에 용이한 React-hook-form 라이브러리 소개" /><published>2022-07-11T00:00:00+09:00</published><updated>2022-07-11T00:00:00+09:00</updated><id>http://localhost:4000/react/2022/07/11/reactHookFrom</id><content type="html" xml:base="http://localhost:4000/react/2022/07/11/reactHookFrom.html"><![CDATA[<h3 id="리액트에서의-form-ui">리액트에서의 Form UI</h3>
+
+<p>사용자 입력 기능을 만들 때,<br />
+value, onChange disable 등의 고려할 부분들과 고작 인풋창 하나에 useState가 기본 2개나 생성된다는 점이 비효율 적이게 느껴졌다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">custom hook</code>으로 만들어두고 사용하는 것도 하나의 방법이겠으나,<br />
+유용한 라이브러리를 발견해 공유하고자 한다 🥳</p>
+
+<h3 id="패키지-설치">패키지 설치</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm i react-hook-form
+$ yarn add react-hook-form
+</code></pre></div></div>
+
+<p><img src="./01.png" alt="예시" /></p>
+
+<h3 id="특징">특징</h3>
+
+<p>일반적인 <code class="language-plaintext highlighter-rouge">form</code>을 다룰 때 많은 <code class="language-plaintext highlighter-rouge">input</code>들을 다 <code class="language-plaintext highlighter-rouge">useState</code>로 관리하고 <code class="language-plaintext highlighter-rouge">change</code>함수만들고 하는 일은
+중복되는 코드들도 많고 번거로운 작업이 많이 들어간다.
+<code class="language-plaintext highlighter-rouge">react hook form</code>은 <code class="language-plaintext highlighter-rouge">value</code>자체가 필요없고 제공되는 <code class="language-plaintext highlighter-rouge">handlesubmit</code>함수에서 모든 <strong><code class="language-plaintext highlighter-rouge">input</code>값들을 관리할 수 있어서 굉장히 편리하고 효율적인 코드</strong>를 만들 수 있다!</p>
+
+<h3 id="장점">장점</h3>
+
+<ul>
+  <li>input하나를 관리하기 위해 작성되는, value 상태와 onChange이벤트 등을 직접 작성하지 않고 쉽게 관리할 수 있다</li>
+  <li>Submit 클릭 시 필수값 중 작성되지 않은 input으로 focus를 자동으로 이동시켜줌</li>
+  <li>에러처리, validation처리가 매우 편함</li>
+</ul>
+
+<h3 id="사용-예시">사용 예시</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useForm</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-hook-form</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">ToDoList</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kr">interface</span> <span class="nx">IForm</span> <span class="p">{</span>
+    <span class="na">email</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">firstName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">lastName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">userName</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">password1</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">password2</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+    <span class="nl">extraError</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="p">{</span>
+    <span class="nx">register</span><span class="p">,</span>
+    <span class="nx">handleSubmit</span><span class="p">,</span>
+    <span class="na">formState</span><span class="p">:</span> <span class="p">{</span> <span class="nx">errors</span> <span class="p">},</span>
+    <span class="nx">setError</span><span class="p">,</span>
+  <span class="p">}</span> <span class="o">=</span> <span class="nx">useForm</span><span class="o">&lt;</span><span class="nx">IForm</span><span class="o">&gt;</span><span class="p">({</span>
+    <span class="na">defaultValues</span><span class="p">:</span> <span class="p">{</span>
+      <span class="na">email</span><span class="p">:</span> <span class="dl">"</span><span class="s2">@naver.com</span><span class="dl">"</span><span class="p">,</span>
+    <span class="p">},</span>
+  <span class="p">});</span>
+
+  <span class="kd">const</span> <span class="nx">onValid</span> <span class="o">=</span> <span class="p">(</span><span class="na">data</span><span class="p">:</span> <span class="nx">IForm</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">password1</span> <span class="o">!==</span> <span class="nx">data</span><span class="p">.</span><span class="nx">password2</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// shouldFocus 특정 에러일때 커서가 이동되도록 함</span>
+      <span class="nx">setError</span><span class="p">(</span>
+        <span class="dl">"</span><span class="s2">password1</span><span class="dl">"</span><span class="p">,</span>
+        <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Password are not the same</span><span class="dl">"</span> <span class="p">},</span>
+        <span class="p">{</span> <span class="na">shouldFocus</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span>
+      <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="c1">// 백엔드 에러라 가정하고, form전체 에러 예제임</span>
+    <span class="nx">setError</span><span class="p">(</span><span class="dl">"</span><span class="s2">extraError</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Server offline</span><span class="dl">"</span> <span class="p">});</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">form</span>
+        <span class="nx">style</span><span class="o">=</span>
+        <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">onValid</span><span class="p">)}</span>
+      <span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="dl">"</span><span class="s2">email</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">required</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Email is required</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">pattern</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">value</span><span class="p">:</span> <span class="sr">/^</span><span class="se">[</span><span class="sr">A-Za-z0-9._%+-</span><span class="se">]</span><span class="sr">+@naver.com$/</span><span class="p">,</span>
+              <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Only naver.com emails allowed</span><span class="dl">"</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">})}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Email</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">?.</span><span class="nx">email</span><span class="p">?.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="c1">// validate 조건 추가</span>
+            <span class="na">validate</span><span class="p">:</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">value</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="dl">"</span><span class="s2">aa</span><span class="dl">"</span><span class="p">),</span>
+          <span class="p">})}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">FirstName</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="dl">"</span><span class="s2">lastName</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">required</span><span class="p">:</span> <span class="kc">true</span> <span class="p">})}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">LastName</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="dl">"</span><span class="s2">userName</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span> <span class="na">required</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">minLength</span><span class="p">:</span> <span class="mi">10</span> <span class="p">})}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">UserName</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="dl">"</span><span class="s2">password1</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">required</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Password1 is required</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">minLength</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+              <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Your password is too short</span><span class="dl">"</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">})}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Password1</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">?.</span><span class="nx">password1</span><span class="p">?.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">input</span>
+          <span class="p">{...</span><span class="nx">register</span><span class="p">(</span><span class="dl">"</span><span class="s2">password2</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+            <span class="na">required</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Password2 is required</span><span class="dl">"</span><span class="p">,</span>
+            <span class="na">minLength</span><span class="p">:</span> <span class="p">{</span>
+              <span class="na">value</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+              <span class="na">message</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Your password is too short</span><span class="dl">"</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">})}</span>
+          <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Password2</span><span class="dl">"</span>
+        <span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span><span class="o">&gt;</span><span class="nx">Add</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">errors</span><span class="p">?.</span><span class="nx">extraError</span><span class="p">?.</span><span class="nx">message</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">ToDoList</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="tip">Tip!</h3>
+
+<p>외부 UI라이브러리와 함께 사용하게 될 경우,<br />
+등록 프로세스를 처리하는 컨트롤러를 이용하면된다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="p">...</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">(</span><span class="nx">onSubmit</span><span class="p">)}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">Controller</span>
+        <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">firstName</span><span class="dl">"</span>
+        <span class="nx">control</span><span class="o">=</span><span class="p">{</span><span class="nx">control</span><span class="p">}</span>
+        <span class="nx">render</span><span class="o">=</span><span class="p">{({</span> <span class="nx">field</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="o">&lt;</span><span class="nx">Input</span> <span class="p">{...</span><span class="nx">field</span><span class="p">}</span> <span class="sr">/&gt;} /</span><span class="o">/</span> <span class="o">&lt;-</span> <span class="nx">UI라이브러리</span> <span class="nx">요소</span> <span class="nx">사용</span>
+      <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="kd">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">submit</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+
+</code></pre></div></div>]]></content><author><name>eunchu</name></author><category term="React" /><category term="react" /><category term="library" /><summary type="html"><![CDATA[리액트에서의 Form UI]]></summary></entry><entry><title type="html">Typescript interface 쉽게 만들기</title><link href="http://localhost:4000/tip/2022/07/02/interface.html" rel="alternate" type="text/html" title="Typescript interface 쉽게 만들기" /><published>2022-07-02T00:00:00+09:00</published><updated>2022-07-02T00:00:00+09:00</updated><id>http://localhost:4000/tip/2022/07/02/interface</id><content type="html" xml:base="http://localhost:4000/tip/2022/07/02/interface.html"><![CDATA[<p>받아온 api object의 keys, values를 뽑아서 쉽게 복붙해서 만들자!</p>
+
+<p>콘솔로 출력한 뒤,<br />
+<code class="language-plaintext highlighter-rouge">Store object as global variable</code> 항목을 클릭하면 <code class="language-plaintext highlighter-rouge">temp1</code> 이란 <code class="language-plaintext highlighter-rouge">object</code>가 생성됨</p>
+
+<p><img src="../assets/images/post/interface-01.png" alt="예시" /></p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">temp1</span><span class="p">).</span><span class="nx">join</span><span class="p">();</span>
+
+<span class="o">&gt;</span> <span class="dl">"</span><span class="s2">id,name,...</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>모든 속성명 가져오기</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">values</span><span class="p">(</span><span class="nx">temp1</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">v</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">typeof</span> <span class="nx">v</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">join</span><span class="p">();</span>
+
+<span class="o">&gt;</span> <span class="dl">"</span><span class="s2">string,string,...</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>모든 타입 가져오기</p>
+
+<p><em>단, object in array 같은 경우 그냥 object로 찍히기 때문에.. 확인하고 사용해야 한다!</em></p>]]></content><author><name>eunchu</name></author><category term="Tip" /><category term="typescript" /><category term="interface" /><category term="tip" /><summary type="html"><![CDATA[받아온 api object의 keys, values를 뽑아서 쉽게 복붙해서 만들자!]]></summary></entry><entry><title type="html">Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)</title><link href="http://localhost:4000/javascript/2022/06/10/jsEvent.html" rel="alternate" type="text/html" title="Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)" /><published>2022-06-10T00:00:00+09:00</published><updated>2022-06-10T00:00:00+09:00</updated><id>http://localhost:4000/javascript/2022/06/10/jsEvent</id><content type="html" xml:base="http://localhost:4000/javascript/2022/06/10/jsEvent.html"><![CDATA[<h3 id="비동기-처리의-특성">비동기 처리의 특성</h3>
+
+<p>특정 로직의 실행이 끝날 때까지 기다려주지 않고 나머지 코드를 먼저
+실행하는 것이 비동기 처리의 특징</p>
+
+<!--truncate-->
+
+<h3 id="비동기-처리의-문제점">비동기 처리의 문제점</h3>
+
+<p>좋은 사용자 경험과 성능을 위해 비동기처리 방식을 채택하고 있지만
+개발자는 순서가 뒤죽박죽인 코드의 실행이 직관적이지 않아 불편하고
+api응답을 통해 다음 코드를 실행시키는 등의 동기적 실행 처리가 필요하다</p>
+
+<h3 id="예외에러-처리-방식">예외(에러) 처리 방식</h3>
+
+<p><code class="language-plaintext highlighter-rouge">Promise</code>의 경우 <code class="language-plaintext highlighter-rouge">.catch()</code>를 통해서,<br />
+<code class="language-plaintext highlighter-rouge">async&amp;await</code> 를 사용할 경우엔 <code class="language-plaintext highlighter-rouge">try &amp; catch</code>를 통해 오류를 잡하준다<br />
+예외처리를 안할 경우<br />
+에러나 났음에도 이후 로직을 계속 실행하기 때문에 오류가 발생함</p>
+
+<h2 id="개념-정리">개념 정리</h2>
+
+<h3 id="이벤트-버블링bubbling">이벤트 버블링(Bubbling)</h3>
+
+<p>이벤트 발생 시, 요소에 할당된 핸들러 동작 후에 최상단의 조상요소를 만날 때까지 부모요소 핸들러를 동작하는 것</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('form')</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('div')</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">p</span> <span class="nx">onClick</span><span class="o">=</span><span class="dl">"</span><span class="s2">alert('p')</span><span class="dl">"</span><span class="o">&gt;</span><span class="nx">event</span><span class="o">&lt;</span><span class="sr">/p</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/form</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>p를 클릭하면, p,div,form 순으로 alert이 발생된다</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">e.stopPropagation()</code> -&gt; 위쪽으로 일어나는 버블링을 막아줌. (다른 핸들러 동작은 못막)
+<code class="language-plaintext highlighter-rouge">e.stopImmediatepropagation()</code> -&gt; 다른 핸들러 동작도 막아줌</p>
+</blockquote>
+
+<h3 id="이벤트-캡쳐링capturing">이벤트 캡쳐링(Capturing)</h3>
+
+<p>버블링의 반대. 이벤트가 하위 요소로 전파되는 것</p>
+
+<h3 id="이벤트-위임">이벤트 위임</h3>
+
+<p>하나의 부모에 이벤트를 등록하여, 부모가 이벤트를 위임하는 방식
+하위 요소 각각에서 이벤트를 붙이지 않고 상위 요소에서 하위 요소들의 이벤트들을 제어함</p>
+
+<p><strong>장점</strong></p>
+
+<ul>
+  <li>동적인 요소들의 처리가 수월함</li>
+  <li>이벤트 핸들러가 더 적게 등록되기 때문에 메모리 절약</li>
+  <li>하위 요소가 많아질수록 이벤트리스너를 다루는 작업이 번거롭기 때문에 위임방식을 사용함</li>
+</ul>]]></content><author><name>eunchu</name></author><category term="Javascript" /><category term="frontend" /><category term="javascript" /><category term="event" /><summary type="html"><![CDATA[비동기 처리의 특성]]></summary></entry><entry><title type="html">Typescript 문법 정리</title><link href="http://localhost:4000/typescript/2022/06/04/typescript.html" rel="alternate" type="text/html" title="Typescript 문법 정리" /><published>2022-06-04T00:00:00+09:00</published><updated>2022-06-04T00:00:00+09:00</updated><id>http://localhost:4000/typescript/2022/06/04/typescript</id><content type="html" xml:base="http://localhost:4000/typescript/2022/06/04/typescript.html"><![CDATA[<h2 id="typescript">Typescript</h2>
+
+<blockquote>
+  <p>Javascript 기반의 프로그래밍 언어<br /></p>
+
+  <p>Typescript 플레이그라운드 (타입스크립트 테스트)<br />
+🤹‍♀️ <a href="https://www.typescriptlang.org/play">https://www.typescriptlang.org/play</a></p>
+</blockquote>
+
+<!--truncate-->
+
+<h2 id="기능">기능</h2>
+
+<h3 id="1-optional-props">1. Optional Props</h3>
+
+<p>같은 속성이 다른 두 곳에서, 하나는 <strong>필수</strong> 하나는 <strong>옵셔널</strong>하게 적용될 경우 Default값을 지정할 수 있다.</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">AppProps</span> <span class="p">{</span>
+	<span class="nl">bg</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+	<span class="nl">borderColor</span><span class="p">?:</span> <span class="kr">string</span><span class="p">;</span> <span class="c1">//optional한 값으로 string or undefined</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">bg</span><span class="p">,</span> <span class="nx">borderColor</span> <span class="p">}:</span> <span class="nx">AppProps</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="p">(</span>
+		<span class="o">&lt;</span><span class="nx">Container</span><span class="o">&gt;</span>
+			<span class="o">&lt;</span><span class="nx">Circle</span> <span class="nx">bgColor</span><span class="o">=</span><span class="dl">"</span><span class="s2">tomato</span><span class="dl">"</span> <span class="nx">borderColor</span><span class="o">=</span><span class="p">{</span><span class="nx">borderColor</span> <span class="o">??</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span><span class="p">}</span><span class="sr">/&gt; /</span><span class="o">/</span><span class="nx">undefined일</span> <span class="nx">경우</span> <span class="nx">white값을</span> <span class="nx">사용함</span>
+			<span class="o">&lt;</span><span class="nx">Circle</span> <span class="nx">bgColor</span><span class="o">=</span><span class="dl">"</span><span class="s2">tomato</span><span class="dl">"</span><span class="o">/&gt;</span>
+		<span class="o">&lt;</span><span class="sr">/Container</span><span class="err">&gt;
+</span>	<span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 위와 동일함!</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">({</span> <span class="nx">bg</span><span class="p">,</span> <span class="nx">borderColor</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">white</span><span class="dl">"</span> <span class="p">}:</span> <span class="nx">AppProps</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h3 id="2-enums">2. Enums</h3>
+
+<p>열거형 자료구조, <code class="language-plaintext highlighter-rouge">서로 연관된 상수들의 집할</code>을 정의할 수 있다.<br />
+열거형을 이용하면 내용을 문서화하거나 구분되는 사례 집합을 더 쉽게 관리할 수 있다.<br />
+<br /></p>
+
+<ul>
+  <li>타입스크립트는 숫자와 문자열 기반 열거형을 제공함</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">Categories</span> <span class="p">{</span>
+  <span class="dl">"</span><span class="s2">TO_DO</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">DOING</span><span class="dl">"</span><span class="p">,</span>
+  <span class="dl">"</span><span class="s2">DONE</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">categoryState</span> <span class="o">=</span> <span class="nx">atom</span><span class="o">&lt;</span><span class="nx">IToDo</span><span class="p">[</span><span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">]</span><span class="o">&gt;</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">category</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">default</span><span class="p">:</span> <span class="nx">Categories</span><span class="p">.</span><span class="nx">TO_DO</span><span class="p">,</span> <span class="c1">// 👈</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>사용시 이점</strong></p>
+
+<ul>
+  <li>관리 포인트가 한 곳이라, 수정에 용이함!</li>
+  <li>같은 문자 반복해서 쓸 필요도 없어지고, 에러(오타/실수) 방지할 수 있음</li>
+</ul>
+
+<h3 id="3-string-to-number">3. string to number</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span><span class="p">.</span>
+<span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">123</span><span class="dl">"</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="o">+</span><span class="nx">a</span><span class="p">;</span>
+<span class="c1">// b -&gt; 123</span>
+
+<span class="mi">2</span><span class="p">.</span> <span class="nx">js</span>
+<span class="nb">Number</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
+</code></pre></div></div>]]></content><author><name>eunchu</name></author><category term="Typescript" /><category term="frontend" /><category term="typescript" /><summary type="html"><![CDATA[Typescript]]></summary></entry><entry><title type="html">tsconfig 옵션 정리</title><link href="http://localhost:4000/typescript/2022/06/03/tsconfig.html" rel="alternate" type="text/html" title="tsconfig 옵션 정리" /><published>2022-06-03T00:00:00+09:00</published><updated>2022-06-03T00:00:00+09:00</updated><id>http://localhost:4000/typescript/2022/06/03/tsconfig</id><content type="html" xml:base="http://localhost:4000/typescript/2022/06/03/tsconfig.html"><![CDATA[<h2 id="tsconfigjson-options">tsconfig.json options</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="p">[</span><span class="err">기본</span><span class="w"> </span><span class="err">옵션</span><span class="p">]</span><span class="w">
+    </span><span class="nl">"baseUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"paths"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"@components/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"components/*"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"@styles/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"styles/*"</span><span class="p">],</span><span class="w">
+      </span><span class="nl">"@store/*"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"store/*"</span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">ECMAScript</span><span class="w"> </span><span class="err">버전</span><span class="w"> </span><span class="err">설정</span><span class="w">
+    </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"es6"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">모듈을</span><span class="w"> </span><span class="err">위한</span><span class="w"> </span><span class="err">코드</span><span class="w"> </span><span class="err">생성</span><span class="w"> </span><span class="err">설정</span><span class="w">
+    </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commonjs"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">컴파일에</span><span class="w"> </span><span class="err">포함될</span><span class="w"> </span><span class="err">라이브러리</span><span class="w"> </span><span class="err">파일</span><span class="w"> </span><span class="err">목록</span><span class="w">
+    </span><span class="nl">"lib"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"dom"</span><span class="p">,</span><span class="w"> </span><span class="s2">"dom.iterable"</span><span class="p">,</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">],</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">js파일</span><span class="w"> </span><span class="err">컴파일</span><span class="w"> </span><span class="err">허용</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"allowJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">.js파일의</span><span class="w"> </span><span class="err">오류</span><span class="w"> </span><span class="err">검사</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"checkJs"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">.map</span><span class="w"> </span><span class="err">파일</span><span class="w"> </span><span class="err">생성</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"sourceMap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">주석</span><span class="w"> </span><span class="err">삭제</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"removeComments"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">결과</span><span class="w"> </span><span class="err">파일</span><span class="w"> </span><span class="err">내보낼지</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"noEmit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">각</span><span class="w"> </span><span class="err">파일을</span><span class="w"> </span><span class="err">분리된</span><span class="w"> </span><span class="err">모듈로</span><span class="w"> </span><span class="err">트랜스파일</span><span class="w">
+    </span><span class="nl">"isolatedModules"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+
+
+    </span><span class="err">//</span><span class="w"> </span><span class="p">[</span><span class="err">타입</span><span class="w"> </span><span class="err">체킹</span><span class="p">]</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">엄격한</span><span class="w"> </span><span class="err">타입</span><span class="w"> </span><span class="err">체킹</span><span class="w"> </span><span class="err">옵션</span><span class="w">
+    </span><span class="nl">"strict"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+
+    </span><span class="nl">"esModuleInterop"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esnext"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">모듈</span><span class="w"> </span><span class="err">해석</span><span class="w"> </span><span class="err">방법</span><span class="w"> </span><span class="err">설정</span><span class="w">
+    </span><span class="nl">"moduleResolution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"node"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"resolveJsonModule"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"jsx"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preserve"</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">증분</span><span class="w"> </span><span class="err">컴파일</span><span class="w"> </span><span class="err">설정</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"incremental"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+
+    </span><span class="err">//</span><span class="w"> </span><span class="err">정의</span><span class="w"> </span><span class="err">파일의</span><span class="w"> </span><span class="err">타입</span><span class="w"> </span><span class="err">확인</span><span class="w"> </span><span class="err">건너</span><span class="w"> </span><span class="err">뛸</span><span class="w"> </span><span class="err">지</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"skipLibCheck"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="err">//</span><span class="w"> </span><span class="err">같은</span><span class="w"> </span><span class="err">파일에</span><span class="w"> </span><span class="err">대한</span><span class="w"> </span><span class="err">일관되지</span><span class="w"> </span><span class="err">않은</span><span class="w"> </span><span class="err">참조</span><span class="w"> </span><span class="err">허용</span><span class="w"> </span><span class="err">여부</span><span class="w">
+    </span><span class="nl">"forceConsistentCasingInFileNames"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"include"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"next-env.d.ts"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.ts"</span><span class="p">,</span><span class="w"> </span><span class="s2">"**/*.tsx"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"exclude"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"node_modules"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p><a href="https://aka.ms/tsconfig.json">더 많은 옵션!</a></p>]]></content><author><name>eunchu</name></author><category term="Typescript" /><category term="frontend" /><category term="typescript" /><summary type="html"><![CDATA[tsconfig.json options]]></summary></entry><entry><title type="html">Recoil vs Redux 비교와 상태관리 라이브러리 선택</title><link href="http://localhost:4000/react/2022/06/02/recoilVSredux.html" rel="alternate" type="text/html" title="Recoil vs Redux 비교와 상태관리 라이브러리 선택" /><published>2022-06-02T00:00:00+09:00</published><updated>2022-06-02T00:00:00+09:00</updated><id>http://localhost:4000/react/2022/06/02/recoilVSredux</id><content type="html" xml:base="http://localhost:4000/react/2022/06/02/recoilVSredux.html"><![CDATA[<h2 id="overview">Overview</h2>
+
+<p>다른 프로젝트에 투입되면서 아키텍쳐 설계부터 대대적인 수정이 필요해졌다.<br />
+또 시작되는 <strong>리팩토링</strong> 🥳<br />
+기존의 상태관리 방식에서 맘에 안들었던 점도 고칠겸! 이번 프로젝트의 레거시 코드도 대거 걷어낼겸<br />
+기존 프로젝트에서 사용중이었던 <strong><a href="https://ko.redux.js.org/">Redux</a></strong>와 상태관리 체계가 변경되면서 사용하기 적합하다고 판단되는<br />
+<strong><a href="https://recoiljs.org/ko/">Recoil</a></strong>를 비교해보고
+팀원들과 공유 후 선택되는 방향으로 상태체제를 구성해보려고 한다.🙌</p>
+
+<h2 id="recoil-vs-redux">Recoil vs Redux</h2>
+
+<h3 id="1-비교">1. 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Recoil</th>
+      <th>Redux</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>컨셉</td>
+      <td>Atomic 모델 기반<br /> : 작은 상태 단위(atom)로 관리,<br /> atom을 결합하여 데이터를 가공하는 방식</td>
+      <td>Flux 아키텍쳐 기반<br /> : 단방향 데이터 흐름<br /> action -&gt; dispatcher -&gt; store -&gt; view</td>
+    </tr>
+    <tr>
+      <td>미들웨어</td>
+      <td>X</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>코드량</td>
+      <td>↑</td>
+      <td>↓</td>
+    </tr>
+    <tr>
+      <td>복잡도</td>
+      <td>중하</td>
+      <td>중상</td>
+    </tr>
+    <tr>
+      <td>DevTools</td>
+      <td>미흡</td>
+      <td>Good</td>
+    </tr>
+    <tr>
+      <td>관리방식</td>
+      <td>분산관리</td>
+      <td>중앙집중형</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="2-recoil-특징">2. Recoil 특징</h3>
+
+<ul>
+  <li>동시성 모드 제공
+    <ul>
+      <li>Concurrent mode: 흐름이 여러 개가 존재하는 경우, 렌더링 독작 우선순위를 정하여 렌더링할 수 있음</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">atom -&gt; selector -&gt; components</code> 플로우의 복잡하지 않은 구조</li>
+  <li>리액트를 위한 맞춤 상태관리 라이브러리</li>
+  <li>낮은 러닝커브</li>
+  <li><code class="language-plaintext highlighter-rouge">store</code>와 같은 외부 요인이 아닌 <code class="language-plaintext highlighter-rouge">react</code>내부의 상태를 활용하고 <code class="language-plaintext highlighter-rouge">contextAPI</code>를 통해 구현되어 있기 때문에 리액트 스러운 상태관리가 가능함</li>
+  <li>리액트 내장 <code class="language-plaintext highlighter-rouge">hooks</code>를 사용하는 방식과 거의 똑같기 때문에 쉽게 배우고 활용할 수 있음</li>
+</ul>
+
+<h3 id="3-redux-특징">3. Redux 특징</h3>
+
+<ul>
+  <li>Single source of truth
+    <ul>
+      <li>같은 데이터는 항상 같은 장소에서 관리</li>
+    </ul>
+  </li>
+  <li>상태 변경은 순수함수로만 가능함</li>
+  <li>브라우저 Devtools를 활용하여 현재 상태를 관리하기 편함</li>
+  <li>중앙집중형 store관리로 로직 복잡도가 높은 편임</li>
+</ul>
+
+<hr />
+
+<h2 id="recoil">Recoil</h2>
+
+<h3 id="특장점">특장점</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">atom → selector → component</code> 의 하나의 <code class="language-plaintext highlighter-rouge">data-flow</code></li>
+  <li><code class="language-plaintext highlighter-rouge">Concurrent Mode</code> 지원</li>
+  <li><strong>캐싱지원</strong>
+    <ul>
+      <li>selector를 통한 비동기 작업을 진행할 때, atom값에 자동으로 의존성이 걸리는데
+atom값이 변경될 때마다 selector가 변경된다. 이때 atom의 값이 동일할 경우 내부적으로
+반환값을 메모라이즈 하고 있어 캐싱된 값을 반환함</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">useRecoilValue</code>를 사용하면 state, set을 반환해줌 try,catch구문을 사용하지 않아도 됨</li>
+</ul>
+
+<h3 id="atom">Atom</h3>
+
+<ul>
+  <li>상태의 단위</li>
+  <li>atom이 업데이트되면 해당 atom을 구독하고 있던 모든 컴포넌트의 상태가 갱신되어 리랜더됨</li>
+  <li>unique한 key값으로 구분함</li>
+</ul>
+
+<h3 id="userecoilstate">useRecoilState</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">[</span><span class="nx">value</span><span class="p">,</span> <span class="nx">setValue</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useRecoilState</span><span class="p">(</span><span class="nx">valueState</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">useRecoilState</code> hook을 사용해서 <code class="language-plaintext highlighter-rouge">state</code>를 <code class="language-plaintext highlighter-rouge">get</code>, <code class="language-plaintext highlighter-rouge">set</code>할 수 있음<br />
+<strong>react의 useState와 동일한 사용방식</strong></p>
+
+<h3 id="userecoilvalue-usesetrecoilvalue">useRecoilValue, useSetRecoilValue</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">useRecoilValue</span><span class="p">(</span><span class="nx">valueState</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">setValue</span> <span class="o">=</span> <span class="nx">useSetRecoilValue</span><span class="p">(</span><span class="nx">valueState</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>value, 변경함수 각각 따로 호출하여 쓸 수 있음</p>
+
+<h3 id="selector">Selector</h3>
+
+<p>다른 selector, atom의 값을 get해올 수 있고 그 값을 바탕으로 state를 modify하는 역할</p>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">countState</span> <span class="o">=</span> <span class="nx">selector</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">countState</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// uniqueId</span>
+  <span class="na">get</span><span class="p">:</span> <span class="p">({</span> <span class="kd">get</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="kd">get</span><span class="p">(</span><span class="nx">textState</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">text</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="na">set</span><span class="p">:</span> <span class="p">({</span> <span class="kd">set</span> <span class="p">},</span> <span class="nx">newValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="c1">// newValue =&gt; 변경 된 상태 값</span>
+  <span class="p">},</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<ul>
+  <li>파생된 <code class="language-plaintext highlighter-rouge">state</code>를 만들 수 있음</li>
+  <li><code class="language-plaintext highlighter-rouge">get</code>프로퍼티를 통해 <code class="language-plaintext highlighter-rouge">state</code>를 가공하여 반환할 수 있음</li>
+  <li>순수함수여야 함</li>
+  <li>기본적으로 값을 캐싱함 (한번 call한 api에 대해서 새로운 call이 필요 없음)</li>
+</ul>
+
+<hr />
+
+<h2 id="결론">결론</h2>
+
+<ol>
+  <li>상태관리 변경의 필요성</li>
+  <li>
+    <p>다른 라이브러리의 도입</p>
+
+    <p>두 가지 모두 필요한 부분이고 현 프로젝트의 문제점을 해결할 수 있으며<br />
+간단한 개념으로도 쉽게 접근할 수 있는 recoil의 도입을 결정.<br />
+심지어 많은 보일러 플레이트 코드들을 줄일 수 있다.<br />
+대형 프로젝트에서의 관리에 대한 레퍼런스는 많지 않지만, 시간을 투자하여 적용할 가치가 있다고 판단됨</p>
+  </li>
+</ol>]]></content><author><name>eunchu</name></author><category term="React" /><category term="frontend" /><category term="react" /><category term="recoil" /><category term="redux" /><summary type="html"><![CDATA[Overview]]></summary></entry><entry><title type="html">리액트 상태관리 변경에 대한 제안</title><link href="http://localhost:4000/react/2022/06/01/reactState.html" rel="alternate" type="text/html" title="리액트 상태관리 변경에 대한 제안" /><published>2022-06-01T00:00:00+09:00</published><updated>2022-06-01T00:00:00+09:00</updated><id>http://localhost:4000/react/2022/06/01/reactState</id><content type="html" xml:base="http://localhost:4000/react/2022/06/01/reactState.html"><![CDATA[<h2 id="overview">Overview</h2>
 
 <p><strong>현 프로젝트 상태구조</strong>
 전역 상태 관리를 위해 <code class="language-plaintext highlighter-rouge">ContextAPI</code>를 사용하고 있으며,
