@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-11T13:22:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>eunchu</name></author><entry><title type="html">리액트 상태관리 변경에 대한 제안</title><link href="http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown.html" rel="alternate" type="text/html" title="리액트 상태관리 변경에 대한 제안" /><published>2018-12-05T00:00:00+09:00</published><updated>2018-12-05T00:00:00+09:00</updated><id>http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown</id><content type="html" xml:base="http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown.html"><![CDATA[<h2 id="overview">Overview</h2>
+I"<h2 id="overview">Overview</h2>
 
 <p><strong>현 프로젝트 상태구조</strong>
 전역 상태 관리를 위해 <code class="language-plaintext highlighter-rouge">ContextAPI</code>를 사용하고 있으며,
@@ -17,10 +17,10 @@ Server State: 서버로부터 받아오는 State</p>
 <h2 id="현재-구조">현재 구조</h2>
 
 <p><strong>전역 상태</strong>
-<img src="../assets/images/post/01.png," alt="전역상태" title="전역상태" /></p>
+<img src="../assets/images/post/01.png" alt="전역상태" /></p>
 
 <p><strong>로컬상태</strong>
-<img src="../assets/images/post/02.png," alt="로컬상태" title="로컬상태" /></p>
+<img src="./02.png" alt="로컬상태" /></p>
 
 <h2 id="️-문제점">✔️ 문제점</h2>
 
@@ -83,4 +83,5 @@ Server State: 서버로부터 받아오는 State</p>
 
 <p>Local State: 기존 방식 유지 (useState)<br />
 Global State: Recoil, Mobx같이 전역관리용 라이브러리 써치 및 도입 필요<br />
-Server State: React query를 사용하여 로컬상태와 분리함</p>]]></content><author><name>eunchu</name></author><category term="React" /><category term="frontend" /><category term="react" /><category term="react-query" /><category term="recoil" /><category term="상태관리" /><summary type="html"><![CDATA[Overview]]></summary></entry></feed>
+Server State: React query를 사용하여 로컬상태와 분리함</p>
+:ET

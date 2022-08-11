@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-11T13:22:09+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>eunchu</name></author><entry><title type="html">리액트 상태관리 변경에 대한 제안</title><link href="http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown.html" rel="alternate" type="text/html" title="리액트 상태관리 변경에 대한 제안" /><published>2018-12-05T00:00:00+09:00</published><updated>2018-12-05T00:00:00+09:00</updated><id>http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown</id><content type="html" xml:base="http://localhost:4000/react/2018/12/05/an-exhibit-of-markdown.html"><![CDATA[<h2 id="overview">Overview</h2>
+I"E<h2 id="overview">Overview</h2>
 
 <p><strong>현 프로젝트 상태구조</strong>
 전역 상태 관리를 위해 <code class="language-plaintext highlighter-rouge">ContextAPI</code>를 사용하고 있으며,
@@ -17,10 +17,10 @@ Server State: 서버로부터 받아오는 State</p>
 <h2 id="현재-구조">현재 구조</h2>
 
 <p><strong>전역 상태</strong>
-<img src="../assets/images/post/01.png," alt="전역상태" title="전역상태" /></p>
+<img src="../assets/images/post/01.png" alt="전역상태" /></p>
 
 <p><strong>로컬상태</strong>
-<img src="../assets/images/post/02.png," alt="로컬상태" title="로컬상태" /></p>
+<img src="./02.png" alt="로컬상태" /></p>
 
 <h2 id="️-문제점">✔️ 문제점</h2>
 
@@ -83,4 +83,87 @@ Server State: 서버로부터 받아오는 State</p>
 
 <p>Local State: 기존 방식 유지 (useState)<br />
 Global State: Recoil, Mobx같이 전역관리용 라이브러리 써치 및 도입 필요<br />
-Server State: React query를 사용하여 로컬상태와 분리함</p>]]></content><author><name>eunchu</name></author><category term="React" /><category term="frontend" /><category term="react" /><category term="react-query" /><category term="recoil" /><category term="상태관리" /><summary type="html"><![CDATA[Overview]]></summary></entry></feed>
+Server State: React query를 사용하여 로컬상태와 분리함</p>
+
+<!-- ## An exhibit of Markdown
+
+_Note: Feel free to play with this page. Unlike regular notes, this doesn't automatically save itself._
+
+## Basic formatting
+
+Paragraphs can be written like so. A paragraph is the basic block of Markdown. A paragraph is what text will turn into when there is no reason it should become anything else.
+
+Paragraphs must be separated by a blank line. Basic formatting of _italics_ and **bold** is supported. This _can be **nested** like_ so.
+
+## Lists
+
+### Ordered list
+
+1. Item 1
+2. A second item
+3. Number 3
+4. Ⅳ
+
+_Note: the fourth item uses the Unicode character for [Roman numeral four][2]._
+
+### Unordered list
+
+- An item
+- Another item
+- Yet another item
+- And there's more...
+
+## Paragraph modifiers
+
+### Code block
+
+    Code blocks are very useful for developers and other people who look at code or other things that are written in plain text. As you can see, it uses a fixed-width font.
+
+You can also make `inline code` to add code into other things.
+
+### Quote
+
+> Here is a quote. What this is should be self explanatory. Quotes are automatically indented when they are used.
+
+## Headings
+
+There are six levels of headings. They correspond with the six levels of HTML headings. You've probably noticed them already in the page. Each level down uses one more hash character.
+
+### Headings _can_ also contain **formatting**
+
+### They can even contain `inline code`
+
+Of course, demonstrating what headings look like messes up the structure of the page.
+
+I don't recommend using more than three or four levels of headings here, because, when you're smallest heading isn't too small, and you're largest heading isn't too big, and you want each size up to look noticeably larger and more important, there there are only so many sizes that you can use.
+
+## URLs
+
+URLs can be made in a handful of ways:
+
+- A named link to [MarkItDown][3]. The easiest way to do these is to select what you want to make a link and hit `Ctrl+L`.
+- Another named link to [MarkItDown](https://www.markitdown.net/)
+- Sometimes you just want a URL like <https://www.markitdown.net/>.
+
+## Horizontal rule
+
+A horizontal rule is a line that goes across the middle of the page.
+
+---
+
+It's sometimes handy for breaking things up.
+
+## Images
+
+Markdown can also contain images. I'll need to add something here sometime.
+
+## Finally
+
+There's actually a lot more to Markdown than this. See the official [introduction][4] and [syntax][5] for more information. However, be aware that this is not using the official implementation, and this might work subtly differently in some of the little things.
+
+[1]: https://daringfireball.net/projects/markdown/
+[2]: https://www.fileformat.info/info/unicode/char/2163/index.htm
+[3]: https://www.markitdown.net/
+[4]: https://daringfireball.net/projects/markdown/basics
+[5]: https://daringfireball.net/projects/markdown/syntax -->
+:ET
