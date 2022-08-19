@@ -1,4 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-11T13:52:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>eunchu</name></author><entry><title type="html">NVM으로 프로젝트 별 Node버전 관리하기</title><link href="http://localhost:4000/tip/2022/07/13/NVMnodeVersion.html" rel="alternate" type="text/html" title="NVM으로 프로젝트 별 Node버전 관리하기" /><published>2022-07-13T00:00:00+09:00</published><updated>2022-07-13T00:00:00+09:00</updated><id>http://localhost:4000/tip/2022/07/13/NVMnodeVersion</id><content type="html" xml:base="http://localhost:4000/tip/2022/07/13/NVMnodeVersion.html"><![CDATA[<p>여러 프로젝트를 동시에 진행하다보니, 프로젝트 별 Node버전을 관리해야 될 필요성이 생겼다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-08-19T15:06:48+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">기술블로그</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><author><name>eunchu</name></author><entry><title type="html">React VAC패턴을 알아보자</title><link href="http://localhost:4000/react/2022/08/17/reactVacPattern.html" rel="alternate" type="text/html" title="React VAC패턴을 알아보자" /><published>2022-08-17T00:00:00+09:00</published><updated>2022-08-17T00:00:00+09:00</updated><id>http://localhost:4000/react/2022/08/17/reactVacPattern</id><content type="html" xml:base="http://localhost:4000/react/2022/08/17/reactVacPattern.html"><![CDATA[<h3 id="디자인-패턴">디자인 패턴</h3>
+
+<p>지금껏 React로 개발을 해오면서 다양한 디자인 패턴을 적용하고 활용해보면서
+최근까지 거의 정착해오던 패턴이 <code class="language-plaintext highlighter-rouge">Container-Presenter</code>패턴이다.</p>
+
+<p>컴포넌트 내부에 View기능과 비지니스 로직이 많아지면서 데이터 처리와 출력을 구분하여 관리할 필요성을 느꼈기 때문에 적용한 패턴이었다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">props</code>를 한번 더 전달해야 하는 경우는 좀 불편하였고,
+그 외의 부분에선 코드 가독성도 높아지고 <em>(프로젝트 후반부로 갈수록 규모가 커지고 복잡해지기 때문에 꽤 신경쓰는 부분!)</em> 협업단에서의 충돌도 많이 줄었기 때문에 굉장히 만족하며 쓰고있는 패턴이다.</p>
+
+<hr />
+
+<h3 id="vac-pattern">VAC Pattern</h3>
+
+<p>때문에 VAC패턴에 더욱 관심이 가서 알아보고 적용해보려한다.
+지금 쓰고있는 <code class="language-plaintext highlighter-rouge">Container-Presenter</code>패턴과 비슷하지만, 좀 더 강력하게(?) 적극적으로 스타일과 로직을 분리하는 패턴이다.</p>
+
+<p><img src="../assets/images/post/reactVacPattern-01.png" alt="패턴이미지" /></p>]]></content><author><name>eunchu</name></author><category term="React" /><category term="react" /><category term="VAC" /><summary type="html"><![CDATA[디자인 패턴]]></summary></entry><entry><title type="html">NVM으로 프로젝트 별 Node버전 관리하기</title><link href="http://localhost:4000/tip/2022/07/13/NVMnodeVersion.html" rel="alternate" type="text/html" title="NVM으로 프로젝트 별 Node버전 관리하기" /><published>2022-07-13T00:00:00+09:00</published><updated>2022-07-13T00:00:00+09:00</updated><id>http://localhost:4000/tip/2022/07/13/NVMnodeVersion</id><content type="html" xml:base="http://localhost:4000/tip/2022/07/13/NVMnodeVersion.html"><![CDATA[<p>여러 프로젝트를 동시에 진행하다보니, 프로젝트 별 Node버전을 관리해야 될 필요성이 생겼다.
 요번 포스팅에선 맥유저를 위해 NVM으로 Node버전을 관리하는 방법에 대해 알아보겠습니다.</p>
 
 <h3 id="nvm-설치">NVM 설치</h3>

@@ -7,21 +7,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-translate-customization" content="108d9124921d80c3-80e20d618ff053c8-g4f02ec6f3dba68b7-c">
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Quick markdown example | 기술블로그</title>
+<title>React VAC패턴을 알아보자 | 기술블로그</title>
 <meta name="generator" content="Jekyll v4.2.2">
-<meta property="og:title" content="Quick markdown example">
+<meta property="og:title" content="React VAC패턴을 알아보자">
 <meta name="author" content="eunchu">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.">
-<link rel="canonical" href="http://localhost:4000/example/2017-06-10-quick-mardown-example.html">
-<meta property="og:url" content="http://localhost:4000/example/2017-06-10-quick-mardown-example.html">
+<meta name="description" content="디자인 패턴">
+<meta property="og:description" content="디자인 패턴">
+<link rel="canonical" href="http://localhost:4000/react/2022/08/17/reactVacPattern.html">
+<meta property="og:url" content="http://localhost:4000/react/2022/08/17/reactVacPattern.html">
 <meta property="og:site_name" content="기술블로그">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-08-17T00:00:00+09:00">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="Quick markdown example">
+<meta property="twitter:title" content="React VAC패턴을 알아보자">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"eunchu"},"description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Quick markdown example","url":"http://localhost:4000/example/2017-06-10-quick-mardown-example.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"eunchu"},"dateModified":"2022-08-17T00:00:00+09:00","datePublished":"2022-08-17T00:00:00+09:00","description":"디자인 패턴","headline":"React VAC패턴을 알아보자","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/react/2022/08/17/reactVacPattern.html"},"url":"http://localhost:4000/react/2022/08/17/reactVacPattern.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="shortcut icon" href="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -119,7 +120,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
     display: none;
   }
 </style>
-<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
@@ -782,11 +782,11 @@ function googleTranslateElementInit() {
 
 
 <header class="post-header">
-  <h1 class="post-title p-name" itemprop="name headline">Quick markdown example</h1>
-  <h2 class="post-subtitle">This is a quick markdown example</h2>
+  <h1 class="post-title p-name" itemprop="name headline">React VAC패턴을 알아보자</h1>
+  <h2 class="post-subtitle">VAC패턴 적용..?</h2>
 
   <p class="post-meta">
-    <time class="dt-published" datetime="" itemprop="datePublished"><i class="fa fa-calendar"></i> 
+    <time class="dt-published" datetime="2022-08-17T00:00:00+09:00" itemprop="datePublished"><i class="fa fa-calendar"></i> Aug 17, 2022
     </time>
 
     
@@ -823,212 +823,56 @@ function googleTranslateElementInit() {
 
 
 
-    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 3 mins</span>
+    <span class="post-reading-time left-vsplit"><i class="fa fa-clock-o"></i> About 1 min</span>
   </p>
-<div class="post-tags"><a class="post-tag" href="/tags.html#example">#example</a></div></header>
+<div class="post-tags">
+<a class="post-tag" href="/tags.html#react">#react</a><a class="post-tag" href="/tags.html#VAC">#VAC</a>
+</div></header>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
     <div class="post-content e-content" itemprop="articleBody">
 
-      <p>Paragraphs are separated by a blank line.</p>
+      <h3 id="디자인-패턴">디자인 패턴</h3>
 
-<p>2nd paragraph. <em>Italic</em>, <strong>bold</strong>, and <code class="language-plaintext highlighter-rouge">monospace</code>. Itemized lists
-look like:</p>
+<p>지금껏 React로 개발을 해오면서 다양한 디자인 패턴을 적용하고 활용해보면서
+최근까지 거의 정착해오던 패턴이 <code class="language-plaintext highlighter-rouge">Container-Presenter</code>패턴이다.</p>
 
-<ul>
-  <li>this one</li>
-  <li>that one</li>
-  <li>the other one</li>
-</ul>
+<p>컴포넌트 내부에 View기능과 비지니스 로직이 많아지면서 데이터 처리와 출력을 구분하여 관리할 필요성을 느꼈기 때문에 적용한 패턴이었다.</p>
 
-<p>Note that — not considering the asterisk — the actual text
-content starts at 4-columns in.</p>
-
-<blockquote>
-  <p>Block quotes are
-written like so.</p>
-
-  <p>They can span multiple paragraphs,
-if you like.</p>
-</blockquote>
-
-<p>Use 3 dashes for an em-dash. Use 2 dashes for ranges (ex., “it’s all
-in chapters 12–14”). Three dots … will be converted to an ellipsis.
-Unicode is supported. ☺</p>
-
-<h2 id="an-h2-header">An h2 header</h2>
-
-<p>Here’s a numbered list:</p>
-
-<ol>
-  <li>first item</li>
-  <li>second item</li>
-  <li>third item</li>
-</ol>
-
-<p>Note again how the actual text starts at 4 columns in (4 characters
-from the left side). Here’s a code sample:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Let me re-iterate ...
-for i in 1 .. 10 { do-something(i) }
-</code></pre></div></div>
-
-<p>As you probably guessed, indented 4 spaces. By the way, instead of
-indenting the block, you can use delimited blocks, if you like:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>define foobar() {
-    print "Welcome to flavor country!";
-}
-</code></pre></div></div>
-
-<p>(which makes copying &amp; pasting easier). You can optionally mark the
-delimited block for Pandoc to syntax highlight it:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
-<span class="c1"># Quick, count to ten!
-</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="c1"># (but not *too* quick)
-</span>    <span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="an-h3-header">An h3 header</h3>
-
-<p>Now a nested list:</p>
-
-<ol>
-  <li>
-    <p>First, get these ingredients:</p>
-
-    <ul>
-      <li>carrots</li>
-      <li>celery</li>
-      <li>lentils</li>
-    </ul>
-  </li>
-  <li>
-    <p>Boil some water.</p>
-  </li>
-  <li>
-    <p>Dump everything in the pot and follow
-this algorithm:</p>
-
-    <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>find wooden spoon
-uncover pot
-stir
-cover pot
-balance wooden spoon precariously on pot handle
-wait 10 minutes
-goto first step (or shut off burner when done)
-</code></pre></div>    </div>
-
-    <p>Do not bump wooden spoon or it will fall.</p>
-  </li>
-</ol>
-
-<p>Notice again how text always lines up on 4-space indents (including
-that last line which continues item 3 above).</p>
-
-<p>Here’s a link to <a href="http://foo.bar">a website</a>, to a <a href="local-doc.html">local
-doc</a>, and to a <a href="#an-h2-header">section heading in the current
-doc</a>. Here’s a footnote <sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup>.</p>
-
-<p>Tables can look like this:</p>
-
-<p>Name           Size  Material      Color
-————- —–  ————  ————
-All Business      9  leather       brown
-Roundabout       10  hemp canvas   natural
-Cinderella       11  glass         transparent</p>
-
-<p>Table: Shoes sizes, materials, and colors.</p>
-
-<p>(The above is the caption for the table.) Pandoc also supports
-multi-line tables:</p>
-
-<hr>
-<p>Keyword   Text
-——–  ———————–
-red       Sunsets, apples, and
-          other red or reddish
-          things.</p>
-
-<p>green     Leaves, grass, frogs
-          and other things it’s
-          not easy being.
-——–  ———————–</p>
-
-<p>A horizontal rule follows.</p>
+<p><code class="language-plaintext highlighter-rouge">props</code>를 한번 더 전달해야 하는 경우는 좀 불편하였고,
+그 외의 부분에선 코드 가독성도 높아지고 <em>(프로젝트 후반부로 갈수록 규모가 커지고 복잡해지기 때문에 꽤 신경쓰는 부분!)</em> 협업단에서의 충돌도 많이 줄었기 때문에 굉장히 만족하며 쓰고있는 패턴이다.</p>
 
 <hr>
 
-<p>Here’s a definition list:</p>
+<h3 id="vac-pattern">VAC Pattern</h3>
 
-<dl>
-  <dt>apples</dt>
-  <dd>Good for making applesauce.</dd>
-  <dt>oranges</dt>
-  <dd>Citrus!</dd>
-  <dt>tomatoes</dt>
-  <dd>There’s no “e” in tomatoe.</dd>
-</dl>
+<p>때문에 VAC패턴에 더욱 관심이 가서 알아보고 적용해보려한다.
+지금 쓰고있는 <code class="language-plaintext highlighter-rouge">Container-Presenter</code>패턴과 비슷하지만, 좀 더 강력하게(?) 적극적으로 스타일과 로직을 분리하는 패턴이다.</p>
 
-<p>Again, text is indented 4 spaces. (Put a blank line between each
-term and  its definition to spread things out more.)</p>
+<p><img src="../assets/images/post/reactVacPattern-01.png" alt="패턴이미지"></p>
 
-<p>Here’s a “line block” (note how whitespace is honored):</p>
-
-<table>
-  <tbody>
-    <tr>
-      <td>Line one</td>
-    </tr>
-    <tr>
-      <td>Line too</td>
-    </tr>
-    <tr>
-      <td>Line tree</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>and images can be specified like so:</p>
-
-<p><img src="https://user-images.githubusercontent.com/9413601/123900693-1d9ebd00-d99c-11eb-8e9e-cf7879187606.png" alt="example image" title="An exemplary image"></p>
-
-<p>Inline math equation: $\omega = d\phi / dt$. Display
-math should get its own line like so:</p>
-
-<p>$$I = \int \rho R^{2} dV$$</p>
-
-<p>And note that you can backslash-escape any punctuation characters
-which you wish to be displayed literally, ex.: `foo`, *bar*, etc.</p>
-<div class="footnotes" role="doc-endnotes">
-  <ol>
-    <li id="fn:1" role="doc-endnote">
-      <p>Some footnote text. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">↩</a></p>
-    </li>
-  </ol>
-</div>
 
 
     </div>
 
 </article>
 <div class="post-nav">
-<span></span><span></span>
+<a class="previous" href="/tip/2022/07/13/NVMnodeVersion.html" title="NVM으로 프로젝트 별 Node버전 관리하기">NVM으로 프로젝트 별 Node버전 관리하기</a><span></span>
 </div>
 <div class="post-related">
       <div>Related Articles</div>
       <ul>
-        </ul>
+        <li><a class="post-link" href="/typescript/2022/06/04/typescript.html" title="">Typescript 문법 정리</a></li>
+<li><a class="post-link" href="/react/2022/06/01/reactState.html" title="">리액트 상태관리 변경에 대한 제안</a></li>
+<li><a class="post-link" href="/javascript/2022/06/10/jsEvent.html" title="">Javascript 이벤트 관리 방법(버블링,캡처링,위임 등)</a></li>
+<li><a class="post-link" href="/tip/2022/07/02/interface.html" title="">Typescript interface 쉽게 만들기</a></li>
+</ul>
     </div>
 <div class="post-comments">  <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = 'http://localhost:4000/example/2017-06-10-quick-mardown-example.html';
-      this.page.identifier = 'http://localhost:4000/example/2017-06-10-quick-mardown-example.html';
+      this.page.url = 'http://localhost:4000/react/2022/08/17/reactVacPattern.html';
+      this.page.identifier = 'http://localhost:4000/react/2022/08/17/reactVacPattern.html';
     };
 
     (function() {

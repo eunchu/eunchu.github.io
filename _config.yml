@@ -183,8 +183,8 @@ yat:
 # paginate: 5
 
 # Disqus comments
-# disqus:
-#   shortname: "Your Disqus username"
+disqus:
+  shortname: "https-eunchu-github-io.disqus.com"
 
 # Gitment comments
 # gitment:
@@ -217,4 +217,4 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-spaceship
-# remote_theme: "jeffreytse/jekyll-theme-yat"
+
