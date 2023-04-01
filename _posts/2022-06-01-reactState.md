@@ -23,10 +23,10 @@ tags: [frontend, react, react-query, recoil, 상태관리]
 ## 현재 구조
 
 **전역 상태**
-![전역상태](../assets/images/post/01.png, "전역상태")
+![전역상태](/assets/images/post/01.png)
 
 **로컬상태**
-![로컬상태](../assets/images/post/02.png, "로컬상태")
+![로컬상태](/assets/images/post/02.png)
 
 ## ✔️ 문제점
 

@@ -11,7 +11,7 @@ tags: [typescript, interface, tip]
 콘솔로 출력한 뒤,<br/>
 `Store object as global variable` 항목을 클릭하면 `temp1` 이란 `object`가 생성됨
 
-![예시](../assets/images/post/interface-01.png)
+![예시](/assets/images/post/interface-01.png)
 
 ```typescript
 Object.keys(temp1).join();

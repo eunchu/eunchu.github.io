@@ -21,8 +21,6 @@ $ npm i react-hook-form
 $ yarn add react-hook-form
 ```
 
-![예시](./01.png)
-
 ### 특징
 
 일반적인 `form`을 다룰 때 많은 `input`들을 다 `useState`로 관리하고 `change`함수만들고 하는 일은
