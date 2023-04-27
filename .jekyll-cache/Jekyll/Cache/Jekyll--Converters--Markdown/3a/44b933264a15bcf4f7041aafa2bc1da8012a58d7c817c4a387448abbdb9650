@@ -1,4 +1,4 @@
-I"J<h3 id="디자인-패턴">디자인 패턴</h3>
+I"G<h3 id="디자인-패턴">디자인 패턴</h3>
 
 <p>지금껏 React로 개발을 해오면서 다양한 디자인 패턴을 적용하고 활용해보면서
 최근까지 거의 정착해오던 패턴이 <code class="language-plaintext highlighter-rouge">Container-Presenter</code>패턴이다.</p>
@@ -15,6 +15,5 @@
 <p>때문에 VAC패턴에 더욱 관심이 가서 알아보고 적용해보려한다.
 지금 쓰고있는 <code class="language-plaintext highlighter-rouge">Container-Presenter</code>패턴과 비슷하지만, 좀 더 강력하게(?) 적극적으로 스타일과 로직을 분리하는 패턴이다.</p>
 
-<p><img src="../assets/images/post/reactVacPattern-01.png" alt="패턴이미지" /></p>
-
+<p><img src="/assets/images/post/reactVacPattern-01.png" alt="패턴이미지" /></p>
 :ET

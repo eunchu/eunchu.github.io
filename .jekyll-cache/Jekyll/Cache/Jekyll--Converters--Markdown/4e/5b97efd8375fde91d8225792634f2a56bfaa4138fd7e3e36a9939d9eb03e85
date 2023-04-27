@@ -1,0 +1,60 @@
+I"1<!--truncate-->
+
+<p><img src="/assets/images/post/nextjs-logo.jpeg" alt="nextjs" /></p>
+
+<h2 id="overview">Overview</h2>
+
+<blockquote>
+  <p>자주 사용되는 메서드 사용법 정리</p>
+</blockquote>
+
+<h2 id="routerpush">router.push</h2>
+
+<h3 id="사용법">사용법</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="k">as</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>url: UrlObject</td>
+          <td>String [필수] - 라우팅할 url</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>as: UrlObject</td>
+          <td>String - 브라우저 url에 표시될 경로</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>options
+    <ul>
+      <li>scroll: 라우팅 이동 후 페이지 스크롤 제어(맨 위). 기본값 <code class="language-plaintext highlighter-rouge">true</code></li>
+      <li>shallow: 재실행 없이 현제 페이지의 경로 업데이트. 기본값 <code class="language-plaintext highlighter-rouge">false</code></li>
+      <li>locale: 새 페이지의 로케일 표시</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="예시">예시</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">useRouter</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">next/router
+
+export default function Component() {
+  const router = useRouter()
+
+  return (
+    &lt;div onClick={() =&gt; router.push(</span><span class="dl">'</span><span class="o">/</span><span class="dl">'</span><span class="s1">)}&gt;클릭하면 이동&lt;/div&gt;
+  )
+}
+</span></code></pre></div></div>
+:ET

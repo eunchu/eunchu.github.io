@@ -1,4 +1,4 @@
-I"�?<h3 id="리액트에서의-form-ui">리액트에서의 Form UI</h3>
+I"�?<h3 id="리액트에서의-form-ui">리액트에서의 Form UI</h3>
 
 <p>사용자 입력 기능을 만들 때,<br />
 value, onChange disable 등의 고려할 부분들과 고작 인풋창 하나에 useState가 기본 2개나 생성된다는 점이 비효율 적이게 느껴졌다.</p>
@@ -11,8 +11,6 @@ value, onChange disable 등의 고려할 부분들과 고작 인풋창 하나에
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm i react-hook-form
 $ yarn add react-hook-form
 </code></pre></div></div>
-
-<p><img src="./01.png" alt="예시" /></p>
 
 <h3 id="특징">특징</h3>
 

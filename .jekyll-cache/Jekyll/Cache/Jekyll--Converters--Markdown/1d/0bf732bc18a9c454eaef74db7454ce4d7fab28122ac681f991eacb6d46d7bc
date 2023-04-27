@@ -1,0 +1,26 @@
+I"�<!--truncate-->
+
+<p><img src="/assets/images/post/nextjs-logo.jpeg" alt="nextjs" /></p>
+
+<h2 id="overview">Overview</h2>
+
+<blockquote>
+  <p>자주 사용되는 메서드 사용법 정리</p>
+</blockquote>
+
+<h2 id="routerpush">router.push</h2>
+
+<h3 id="사용법">사용법</h3>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">router</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="k">as</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>url: UrlObject | String [필수] - 라우팅할 url
+as: UrlObject | String - 브라우저 url에 표시될 경로
+options
+scroll: 라우팅 이동 후 페이지 스크롤 제어(맨 위). 기본값 <code class="language-plaintext highlighter-rouge">true</code>
+shallow: 재실행 없이 현제 페이지의 경로 업데이트. 기본값 <code class="language-plaintext highlighter-rouge">false</code>
+locale: 새 페이지의 로케일 표시</p>
+</blockquote>
+:ET

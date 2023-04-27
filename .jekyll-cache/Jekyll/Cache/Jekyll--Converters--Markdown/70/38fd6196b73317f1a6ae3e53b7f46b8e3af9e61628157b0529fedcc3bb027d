@@ -1,4 +1,4 @@
-I"O<h2 id="overview">Overview</h2>
+I"<h2 id="overview">Overview</h2>
 
 <p><strong>현 프로젝트 상태구조</strong>
 전역 상태 관리를 위해 <code class="language-plaintext highlighter-rouge">ContextAPI</code>를 사용하고 있으며,
@@ -17,10 +17,10 @@ Server State: 서버로부터 받아오는 State</p>
 <h2 id="현재-구조">현재 구조</h2>
 
 <p><strong>전역 상태</strong>
-<img src="../assets/images/post/01.png," alt="전역상태" title="전역상태" /></p>
+<img src="/assets/images/post/01.png" alt="전역상태" /></p>
 
 <p><strong>로컬상태</strong>
-<img src="../assets/images/post/02.png," alt="로컬상태" title="로컬상태" /></p>
+<img src="/assets/images/post/02.png" alt="로컬상태" /></p>
 
 <h2 id="️-문제점">✔️ 문제점</h2>
 

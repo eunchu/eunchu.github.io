@@ -1,9 +1,9 @@
-I"l<p>받아온 api object의 keys, values를 뽑아서 쉽게 복붙해서 만들자!</p>
+I"j<p>받아온 api object의 keys, values를 뽑아서 쉽게 복붙해서 만들자!</p>
 
 <p>콘솔로 출력한 뒤,<br />
 <code class="language-plaintext highlighter-rouge">Store object as global variable</code> 항목을 클릭하면 <code class="language-plaintext highlighter-rouge">temp1</code> 이란 <code class="language-plaintext highlighter-rouge">object</code>가 생성됨</p>
 
-<p><img src="../assets/images/post/interface-01.png" alt="예시" /></p>
+<p><img src="/assets/images/post/interface-01.png" alt="예시" /></p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">temp1</span><span class="p">).</span><span class="nx">join</span><span class="p">();</span>
 
