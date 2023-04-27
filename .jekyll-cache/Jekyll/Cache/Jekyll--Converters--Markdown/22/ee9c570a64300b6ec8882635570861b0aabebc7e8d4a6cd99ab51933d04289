@@ -1,0 +1,57 @@
+I"<!--truncate-->
+
+<h2 id="overview">Overview</h2>
+
+<blockquote>
+  <p>풀스텍을 향하여-! 👩‍💻</p>
+</blockquote>
+
+<blockquote>
+  <p>까먹지말고 기록해두자</p>
+</blockquote>
+
+<h2 id="연결부터-해결하자">연결부터 해결하자</h2>
+
+<p>공홈+블로그 보며 연결을 시도했으나..
+mongodb만 연결해서 쓸때는 잘만되던게 error를 밷어낸다</p>
+
+<h2 id="연결">연결</h2>
+
+<blockquote>
+  <p>npx prisma init</p>
+</blockquote>
+
+<p>위 명령어를 통해 prisma를 초기화하면,</p>
+
+<p>프로젝트 내부에 아래처럼 prisma 폴더를 만든 뒤 새 파일이 생긴다</p>
+
+<p><img src="/assets/images/post/0402_01.png" alt="01" /></p>
+
+<p>주요 prisma 구성 파일이며, 아래의 3가지 요소가 포함된다</p>
+
+<ul>
+  <li>데이터소스</li>
+  <li>데이터 모델이 생성 될 위치 지정</li>
+  <li>데이터 모델</li>
+</ul>
+
+<p>아래처럼 셋팅 후,
+user모델도 추가하고 …</p>
+
+<p><img src="/assets/images/post/0402_02.png" alt="02" /></p>
+
+<blockquote>
+  <p>npx prisma db push</p>
+</blockquote>
+
+<p>명령어를 통해 데이터베이스에 배포를 실행하면, 이때 오류가 발생하는데</p>
+
+<p>쪼꼼 당황했으나.. 역시 공식문서를 살펴보니 <code class="language-plaintext highlighter-rouge">.env</code> 에 작성해둔 <code class="language-plaintext highlighter-rouge">DATABASE_URL</code>에 빠진 부분이 있었다</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"mongodb+srv://root:&lt;password&gt;@cluster0.ab1cd.mongodb.net/[여기]?retryWrites=true&amp;w=majority"
+</code></pre></div></div>
+
+<p>[여기] 부분에 db이름이 들어가 있었고.. 😵</p>
+
+<p>이름 추가 후 다시 배포하니 아주 잘 되었다고 한다;)…</p>
+:ET
